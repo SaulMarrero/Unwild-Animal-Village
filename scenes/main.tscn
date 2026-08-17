@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cptkaidda6ijg"]
+
+[node name="main" type="Node2D" unique_id=1744693382]
+
+[node name="play" type="Button" parent="." unique_id=1688773501]
+offset_left = 431.0
+offset_top = 200.0
+offset_right = 621.0
+offset_bottom = 289.0
+
+[node name="settings" type="Button" parent="." unique_id=1543095614]
+offset_left = 419.0
+offset_top = 324.0
+offset_right = 637.0
+offset_bottom = 413.0
+
+[node name="exit" type="Button" parent="." unique_id=1714259970]
+offset_left = 435.0
+offset_top = 464.0
+offset_right = 621.0
+offset_bottom = 538.0
