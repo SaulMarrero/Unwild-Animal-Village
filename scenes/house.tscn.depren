@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://b3lxo6bfgjps8"]
+
+[ext_resource type="Texture2D" uid="uid://bckkrwwinuboa" path="res://sprites/house1.png" id="1_d7po0"]
+[ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_3bgk5"]
+[ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="3_f74lx"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="4_ptc3g"]
+[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="5_wcu0q"]
+[ext_resource type="Script" uid="uid://cydr7ul1nic8h" path="res://scripts/paintings.gd" id="6_f74lx"]
+[ext_resource type="Script" path="res://scenes/continue.gd" id="6_ptc3g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwc8c"]
+size = Vector2(60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhx8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wcu0q")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcuhb"]
+size = Vector2(1920, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgk5"]
+size = Vector2(417, 429)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f74lx"]
+size = Vector2(192, 795)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptc3g"]
+size = Vector2(632, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcu0q"]
+size = Vector2(474, 518)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhx8p"]
+size = Vector2(448, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65la3"]
+size = Vector2(179, 829)
+
+[node name="house" type="Node2D" unique_id=66368149]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557737285]
+position = Vector2(1300, 540)
+texture = ExtResource("1_d7po0")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=429524840]
+position = Vector2(590, 759)
+script = ExtResource("2_3bgk5")
+
+[node name="collision" type="CollisionShape2D" parent="player" unique_id=748499157]
+shape = SubResource("RectangleShape2D_bwc8c")
+
+[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1031602730]
+sprite_frames = SubResource("SpriteFrames_mhx8p")
+
+[node name="camera" type="Camera2D" parent="player" unique_id=1322674370]
+position = Vector2(370, -219)
+limit_left = 0
+limit_right = 2600
+
+[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=1122483178]
+
+[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1258848422]
+position = Vector2(960, 540)
+texture = ExtResource("3_f74lx")
+
+[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=688595958]
+position = Vector2(1418, 494)
+texture = ExtResource("4_ptc3g")
+
+[node name="labelName" type="Label" parent="player/canvaslayer/characterSprite" unique_id=429469235]
+offset_left = -1105.0
+offset_top = 178.0
+offset_right = -828.0
+offset_bottom = 380.0
+rotation = -0.05235988
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Miss
+Sheep"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="labelText" type="Label" parent="player/canvaslayer/characterSprite" unique_id=284221255]
+offset_left = -1107.0
+offset_top = 382.0
+offset_right = -231.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 50
+text = "Hola esto es un texto muy promedio"
+
+[node name="continue" type="Area2D" parent="player/canvaslayer" unique_id=2049847133]
+script = ExtResource("6_ptc3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/continue" unique_id=518923259]
+visible = false
+position = Vector2(960, 540)
+shape = SubResource("RectangleShape2D_qcuhb")
+
+[node name="paintings" type="Area2D" parent="." unique_id=1370277022]
+script = ExtResource("6_f74lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paintings" unique_id=1816949630]
+position = Vector2(537.5, 294.5)
+shape = SubResource("RectangleShape2D_3bgk5")
+
+[node name="puerta1" type="Area2D" parent="." unique_id=1690468373]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta1" unique_id=1803017950]
+position = Vector2(76, 546.5)
+shape = SubResource("RectangleShape2D_f74lx")
+
+[node name="chimenea" type="Area2D" parent="." unique_id=660461058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chimenea" unique_id=1054400643]
+position = Vector2(1135, 345.5)
+shape = SubResource("RectangleShape2D_ptc3g")
+
+[node name="ventana" type="Area2D" parent="." unique_id=792878866]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ventana" unique_id=1394199619]
+position = Vector2(1712, 282)
+shape = SubResource("RectangleShape2D_wcu0q")
+
+[node name="libros" type="Area2D" parent="." unique_id=1368330092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="libros" unique_id=1371862302]
+position = Vector2(2207, 234)
+shape = SubResource("RectangleShape2D_mhx8p")
+
+[node name="puerta2" type="Area2D" parent="." unique_id=40510011]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puerta2" unique_id=1024667291]
+position = Vector2(2527.5, 551.5)
+shape = SubResource("RectangleShape2D_65la3")
+
+[connection signal="input_event" from="paintings" to="paintings" method="_on_input_event"]
