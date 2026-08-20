@@ -61,7 +61,6 @@ limit_left = 0
 limit_right = 2600
 
 [node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=1122483178]
-visible = false
 
 [node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1258848422]
 position = Vector2(960, 540)
@@ -92,6 +91,7 @@ offset_right = -231.0
 offset_bottom = 451.0
 theme_override_font_sizes/font_size = 50
 text = "Hola esto es un texto muy promedio"
+metadata/_edit_use_anchors_ = true
 
 [node name="paintings" type="Area2D" parent="." unique_id=1370277022]
 script = ExtResource("6_f74lx")
