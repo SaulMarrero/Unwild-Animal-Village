@@ -2,8 +2,8 @@ extends Area2D
 @onready var dialog = $"../player/canvaslayer"
 
 var conversation: Array[Dictionary] = [
-	{"name": "Detective\nFox", "text": "Hola soy la oveja"},
-	{"name": "Detective\nFox", "text": "Vivo aquí en el pueblo"}
+	{"name": "Detective\nFox", "text": "La ventana está rota"},
+	{"name": "Detective\nFox", "text": "Me pregunto que habrá sucedido"}
 ]
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
