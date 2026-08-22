@@ -9,11 +9,16 @@
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="7_5m0si"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="7_7vr8w"]
 [ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="8_dxpu0"]
+[ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="8_fmkxj"]
+[ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="11_wd6c3"]
+[ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="12_7gyev"]
+[ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="13_1x85o"]
+[ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="14_0otry"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m0si"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj6"]
 size = Vector2(60, 60)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dxpu0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6epoj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -23,6 +28,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_582hs"]
+size = Vector2(27.5, 410)
 
 [node name="street" type="Node2D" unique_id=1603340922]
 
@@ -67,24 +75,190 @@ texture = ExtResource("4_7vr8w")
 position = Vector2(15050, 390)
 texture = ExtResource("5_5m0si")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=705695500]
-position = Vector2(590, 759)
+[node name="player" type="CharacterBody2D" parent="." unique_id=453470713]
+position = Vector2(2221, 760)
 script = ExtResource("7_5m0si")
 
-[node name="camera" type="Camera2D" parent="player" unique_id=790508401]
-position = Vector2(370, -219)
+[node name="collision" type="CollisionShape2D" parent="player" unique_id=1379865220]
+shape = SubResource("RectangleShape2D_1fhj6")
+
+[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1782597883]
+sprite_frames = SubResource("SpriteFrames_6epoj")
+
+[node name="camera" type="Camera2D" parent="player" unique_id=1580444100]
+position = Vector2(-581, -220)
 limit_left = 0
 limit_right = 15600
 
-[node name="Marco" type="Sprite2D" parent="player/camera" unique_id=1269771745]
+[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=2036885388]
+script = ExtResource("8_fmkxj")
+
+[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1451396760]
+position = Vector2(960, 540)
 texture = ExtResource("7_7vr8w")
 
-[node name="characterSprite" type="Sprite2D" parent="player/camera" unique_id=2001733763]
-position = Vector2(458, -46)
+[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=156617900]
+position = Vector2(1418, 494)
 texture = ExtResource("8_dxpu0")
 
-[node name="collision" type="CollisionShape2D" parent="player" unique_id=2033998921]
-shape = SubResource("RectangleShape2D_5m0si")
+[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=72227446]
+anchors_preset = -1
+anchor_left = -0.03270269
+anchor_top = 0.0030468977
+anchor_right = 0.04683447
+anchor_bottom = 0.0030468977
+offset_left = 313.0
+offset_top = 672.0
+offset_right = 590.0
+offset_bottom = 874.0
+rotation = -0.05235988
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Miss
+Sheep"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1439932470]
-sprite_frames = SubResource("SpriteFrames_dxpu0")
+[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=181267046]
+anchors_preset = -1
+anchor_right = 0.23177083
+anchor_bottom = 0.1421875
+offset_left = 312.0
+offset_top = 860.0
+offset_right = 1188.0
+offset_bottom = 929.0
+theme_override_font_sizes/font_size = 42
+text = "\"My briefcase! My beloved work briefcase... That's where I keep documents about construction projects, events, and lots of other things!\""
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1536239233]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=2015869879]
+position = Vector2(15445, 841)
+shape = SubResource("RectangleShape2D_582hs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1220686807]
+position = Vector2(266, 861)
+shape = SubResource("RectangleShape2D_582hs")
+
+[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=439528828]
+position = Vector2(950, 92)
+texture = ExtResource("11_wd6c3")
+
+[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=2049488756]
+offset_left = -253.0
+offset_top = -39.0
+offset_right = 219.0
+offset_bottom = 44.0
+rotation = -0.017453292
+theme_override_font_sizes/font_size = 60
+text = "Investiga la casa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=979305592]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=274291108]
+offset_left = 1772.0
+offset_top = 13.0
+offset_right = 1908.0
+offset_bottom = 149.0
+
+[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=641869447]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("12_7gyev")
+
+[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1033137540]
+offset_left = -186.0
+offset_top = -413.0
+offset_right = 177.0
+offset_bottom = -248.0
+theme_override_font_sizes/font_size = 120
+text = "CLUES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="next" type="Button" parent="player/canvaslayer/cluesSprite" unique_id=1368950871]
+offset_left = 615.0
+offset_top = -140.0
+offset_right = 719.0
+offset_bottom = 17.0
+text = "AVANZA"
+
+[node name="back" type="Button" parent="player/canvaslayer/cluesSprite" unique_id=290193]
+offset_left = 615.0
+offset_top = 114.0
+offset_right = 719.0
+offset_bottom = 271.0
+text = "ATRÁS"
+
+[node name="Label2" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1604021259]
+offset_left = 68.0
+offset_top = -180.0
+offset_right = 552.0
+offset_bottom = -117.0
+theme_override_font_sizes/font_size = 32
+text = "La ventana rota"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=24644536]
+offset_left = -700.0
+offset_top = -140.0
+offset_right = -520.0
+offset_bottom = 40.0
+texture_normal = ExtResource("13_1x85o")
+texture_hover = ExtResource("14_0otry")
+
+[node name="TextureButton2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1308947378]
+offset_left = -468.0
+offset_top = -140.0
+offset_right = -288.0
+offset_bottom = 40.0
+texture_normal = ExtResource("13_1x85o")
+texture_hover = ExtResource("14_0otry")
+
+[node name="TextureButton3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=248488885]
+offset_left = -236.0
+offset_top = -140.0
+offset_right = -56.0
+offset_bottom = 40.0
+texture_normal = ExtResource("13_1x85o")
+texture_hover = ExtResource("14_0otry")
+
+[node name="TextureButton4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=2039686295]
+offset_left = -700.0
+offset_top = 100.0
+offset_right = -520.0
+offset_bottom = 280.0
+texture_normal = ExtResource("13_1x85o")
+texture_hover = ExtResource("14_0otry")
+
+[node name="TextureButton5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=826468940]
+offset_left = -468.0
+offset_top = 100.0
+offset_right = -288.0
+offset_bottom = 280.0
+texture_normal = ExtResource("13_1x85o")
+texture_hover = ExtResource("14_0otry")
+
+[node name="TextureButton6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1097549523]
+offset_left = -236.0
+offset_top = 100.0
+offset_right = -56.0
+offset_bottom = 280.0
+texture_normal = ExtResource("13_1x85o")
+texture_hover = ExtResource("14_0otry")
+
+[connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
