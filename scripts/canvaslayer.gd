@@ -128,7 +128,7 @@ func _type_line(id: int) -> void:
 		if id != dialog_id or skip_typing:
 			break
 		labelText.text += c
-		await get_tree().create_timer(0.03).timeout
+		await get_tree().create_timer(0.02).timeout
 	if id != dialog_id:
 		return
 	labelText.text = text

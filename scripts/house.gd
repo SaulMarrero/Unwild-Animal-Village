@@ -4,9 +4,12 @@ extends Node2D
 @onready var camera = $player/camera
 @onready var skip_button = $player/canvaslayer/skip
 @onready var clues = $player/canvaslayer/clues
+@onready var areas: Array[Node] = [$door1, $door2, $window, $paintings, $books, $fireplace, $oinker, $woof]
+@onready var nextText = $player/canvaslayer/next/Label
 
 var camera_move_time := 2.0
 var skip_requested := false
+var visitedCount := 0
 
 var conversation: Array[Dictionary] = [
 	{"name": "Mayor Oinker", "text": "How could this have happened? It's horrible! This is intolerable!"},
@@ -36,12 +39,37 @@ var conversation: Array[Dictionary] = [
 	{"name": "Detective Fox", "text": "(... This is going to be a long day.)"}
 ]
 
+var finalConversation: Array[Dictionary] = [
+	{"name": "Detective Fox", "text": "(I think we've been through everything in this house.)"},
+	{"name": "Detective Fox", "text": "(Time to move on and follow up on what we've found.)"}
+]
+
 func _ready() -> void:
 	skip_button.pressed.connect(func(): skip_requested = true)
 	clues.visible = false
+
+	for area in areas:
+		area.investigated.connect(_onAreaVisited)
+
 	await _play_intro()
 	skip_button.visible = false
 	clues.visible = true
+
+func _onAreaVisited() -> void:
+	visitedCount += 1
+
+	if visitedCount >= areas.size():
+		while dialog.state != dialog.State.CLOSED:
+			await get_tree().process_frame
+
+		dialog.start_dialog(finalConversation)
+		nextText.text = "Go to the witness's house"
+
+		while dialog.state != dialog.State.CLOSED:
+			await get_tree().process_frame
+
+		for area in areas:
+			area.caseClosed = true
 
 func _wait(seconds: float) -> void:
 	var timer := get_tree().create_timer(seconds)
@@ -78,6 +106,7 @@ func _play_intro() -> void:
 		return
 
 	dialog.start_dialog(conversation)
+
 	while dialog.state != dialog.State.CLOSED and not skip_requested:
 		await get_tree().process_frame
 

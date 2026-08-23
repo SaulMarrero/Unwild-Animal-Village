@@ -18,9 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="13_3853c"]
 [ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="14_bhgw4"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="16_3ewhn"]
+[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="19_3kuml"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="19_e5ov4"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="20_57tf3"]
+[ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="20_lamap"]
+[ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="20_qrght"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="21_3kuml"]
+[ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="21_de74l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgk5"]
 size = Vector2(417, 429)
@@ -235,13 +239,13 @@ position = Vector2(950, 92)
 texture = ExtResource("16_3ewhn")
 
 [node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=1190677472]
-offset_left = -253.0
-offset_top = -39.0
-offset_right = 219.0
-offset_bottom = 44.0
+offset_left = -630.28546
+offset_top = -32.414455
+offset_right = 637.5429
+offset_bottom = 50.585545
 rotation = -0.017453292
 theme_override_font_sizes/font_size = 60
-text = "Investiga la casa"
+text = "Explore the house for clues"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -255,16 +259,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="clues" type="Button" parent="player/canvaslayer" unique_id=671901837]
-offset_left = 1772.0
-offset_top = 13.0
-offset_right = 1908.0
-offset_bottom = 149.0
-
 [node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=594905605]
 visible = false
 position = Vector2(960, 540)
 texture = ExtResource("19_e5ov4")
+script = ExtResource("20_qrght")
 
 [node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1754049854]
 offset_left = -186.0
@@ -276,77 +275,103 @@ text = "CLUES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="next" type="Button" parent="player/canvaslayer/cluesSprite" unique_id=544176715]
-offset_left = 615.0
+[node name="back" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1617370523]
+offset_left = 597.0
 offset_top = -140.0
-offset_right = 719.0
-offset_bottom = 17.0
-text = "AVANZA"
+offset_right = 745.0
+offset_bottom = 68.0
+texture_normal = ExtResource("20_lamap")
+texture_hover = ExtResource("21_de74l")
 
-[node name="back" type="Button" parent="player/canvaslayer/cluesSprite" unique_id=323040035]
-offset_left = 615.0
-offset_top = 114.0
-offset_right = 719.0
-offset_bottom = 271.0
-text = "ATRÁS"
+[node name="next" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=736514254]
+offset_left = 735.0
+offset_top = 283.0
+offset_right = 883.0
+offset_bottom = 491.0
+rotation = 3.1415927
+texture_normal = ExtResource("20_lamap")
+texture_hover = ExtResource("21_de74l")
 
-[node name="Label2" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=571355234]
+[node name="ClueName" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=571355234]
 offset_left = 68.0
 offset_top = -180.0
 offset_right = 552.0
 offset_bottom = -117.0
 theme_override_font_sizes/font_size = 32
-text = "La ventana rota"
+text = "No clues selected"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1844352722]
+[node name="ClueText" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1276108279]
+offset_left = 76.0
+offset_top = -104.0
+offset_right = 538.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="tb1" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1844352722]
 offset_left = -700.0
 offset_top = -140.0
 offset_right = -520.0
 offset_bottom = 40.0
 texture_normal = ExtResource("20_57tf3")
 texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
 
-[node name="TextureButton2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1379861995]
+[node name="tb2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1379861995]
 offset_left = -468.0
 offset_top = -140.0
 offset_right = -288.0
 offset_bottom = 40.0
 texture_normal = ExtResource("20_57tf3")
 texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
 
-[node name="TextureButton3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=417964111]
+[node name="tb3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=417964111]
 offset_left = -236.0
 offset_top = -140.0
 offset_right = -56.0
 offset_bottom = 40.0
 texture_normal = ExtResource("20_57tf3")
 texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
 
-[node name="TextureButton4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=604784046]
+[node name="tb4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=604784046]
 offset_left = -700.0
 offset_top = 100.0
 offset_right = -520.0
 offset_bottom = 280.0
 texture_normal = ExtResource("20_57tf3")
 texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
 
-[node name="TextureButton5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1145949057]
+[node name="tb5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1145949057]
 offset_left = -468.0
 offset_top = 100.0
 offset_right = -288.0
 offset_bottom = 280.0
 texture_normal = ExtResource("20_57tf3")
 texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
 
-[node name="TextureButton6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=896646100]
+[node name="tb6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=896646100]
 offset_left = -236.0
 offset_top = 100.0
 offset_right = -56.0
 offset_bottom = 280.0
 texture_normal = ExtResource("20_57tf3")
 texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=671901837]
+offset_left = 1772.0
+offset_top = 13.0
+offset_right = 1908.0
+offset_bottom = 149.0
+icon = ExtResource("19_3kuml")
 
 [connection signal="input_event" from="paintings" to="paintings" method="_on_input_event"]
 [connection signal="input_event" from="fireplace" to="fireplace" method="_on_input_event"]

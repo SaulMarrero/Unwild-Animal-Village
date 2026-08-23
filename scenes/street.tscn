@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d0ilxakasdum5"]
 
 [ext_resource type="Texture2D" uid="uid://beg1rmojsvcs5" path="res://sprites/floor.png" id="1_3ffmx"]
+[ext_resource type="Script" uid="uid://bvktf2axt4pvq" path="res://scripts/street.gd" id="1_wd6c3"]
 [ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="2_t23v0"]
 [ext_resource type="Texture2D" uid="uid://bev7lotjmbde5" path="res://sprites/hospital.png" id="3_wjoh7"]
 [ext_resource type="Texture2D" uid="uid://c12om4nqrkxyq" path="res://sprites/house.png" id="3_yrasx"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="11_wd6c3"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="12_7gyev"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="13_1x85o"]
+[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="13_7gyev"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="14_0otry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj6"]
@@ -33,6 +35,7 @@ animations = [{
 size = Vector2(27.5, 410)
 
 [node name="street" type="Node2D" unique_id=1603340922]
+script = ExtResource("1_wd6c3")
 
 [node name="floor" type="Sprite2D" parent="." unique_id=848129823]
 position = Vector2(7800.0005, 930)
@@ -168,12 +171,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="clues" type="Button" parent="player/canvaslayer" unique_id=274291108]
-offset_left = 1772.0
-offset_top = 13.0
-offset_right = 1908.0
-offset_bottom = 149.0
-
 [node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=641869447]
 visible = false
 position = Vector2(960, 540)
@@ -260,5 +257,13 @@ offset_right = -56.0
 offset_bottom = 280.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=274291108]
+offset_left = 1772.0
+offset_top = 13.0
+offset_right = 1908.0
+offset_bottom = 149.0
+icon = ExtResource("13_7gyev")
+flat = true
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]

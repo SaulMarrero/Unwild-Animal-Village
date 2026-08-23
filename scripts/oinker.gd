@@ -1,4 +1,10 @@
 extends Area2D
+
+signal investigated
+
+var visited := false
+var caseClosed := false
+
 @onready var dialog = $"../player/canvaslayer"
 
 var conversation1: Array[Dictionary] = [
@@ -18,7 +24,33 @@ var conversation1: Array[Dictionary] = [
 	{"name": "Detective\nFox", "text": "We'll need to pay a visit to the hospital and Chief Teddy's office next"},
 ]
 
+var shortLine: Array[Dictionary] = [
+	{"name": "Detective\nFox", "text": "(The thief, or one of their accomplices, must be a poisonous animal then)"},
+	{"name": "Detective\nFox", "text": "We'll need to pay a visit to the hospital and Chief Teddy's office next"}
+]
+
+var closedLine: Array[Dictionary] = [
+	{"name": "Detective Fox", "text": "(I have to get out of this place.)"}
+]
+
 func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event.is_action_pressed("click") and not get_viewport().gui_get_hovered_control():
-		dialog.start_dialog(conversation1)
 		get_viewport().set_input_as_handled()
+
+		if caseClosed:
+			dialog.start_dialog(closedLine)
+			return
+
+		if visited:
+			dialog.start_dialog(shortLine)
+			return
+
+		dialog.start_dialog(conversation1)
+		visited = true
+		investigated.emit()
+		_unlockClue()
+
+func _unlockClue() -> void:
+	while dialog.state != dialog.State.CLOSED:
+		await get_tree().process_frame
+	Clues.clue4 = true
