@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="13_1x85o"]
 [ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="13_7gyev"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="14_0otry"]
+[ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="14_1x85o"]
+[ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="15_1fhj6"]
+[ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="16_6epoj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj6"]
 size = Vector2(60, 60)
@@ -34,12 +37,45 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_582hs"]
 size = Vector2(27.5, 410)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6epoj"]
+size = Vector2(253, 471.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5turb"]
+size = Vector2(234.25, 327.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_061y5"]
+size = Vector2(241, 323.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3au6m"]
+size = Vector2(225.5, 319)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3eyu"]
+size = Vector2(215.5, 310.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m25ji"]
+size = Vector2(395.5, 396.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scssp"]
+size = Vector2(236.5, 340.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkqeo"]
+size = Vector2(302.5, 398)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcar7"]
+size = Vector2(317.5, 406)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3phq"]
+size = Vector2(301, 402)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mice7"]
+size = Vector2(302.5, 407)
+
 [node name="street" type="Node2D" unique_id=1603340922]
 script = ExtResource("1_wd6c3")
 
 [node name="floor" type="Sprite2D" parent="." unique_id=848129823]
-position = Vector2(6088, 930)
-scale = Vector2(3, 0.986)
+position = Vector2(6087.9995, 930)
+scale = Vector2(3.0000005, 1.0000004)
 texture = ExtResource("1_3ffmx")
 
 [node name="house1" type="Sprite2D" parent="." unique_id=463781558]
@@ -63,40 +99,41 @@ position = Vector2(9681, 392)
 texture = ExtResource("3_wjoh7")
 
 [node name="mansion" type="Sprite2D" parent="." unique_id=343256675]
-position = Vector2(550, 390)
+position = Vector2(638, 390.75003)
+scale = Vector2(1, 1.0019232)
 texture = ExtResource("4_7vr8w")
 
 [node name="police" type="Sprite2D" parent="." unique_id=1155225032]
 position = Vector2(11538, 392)
 texture = ExtResource("5_5m0si")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=453470713]
-position = Vector2(2221, 760)
+[node name="player" type="CharacterBody2D" parent="." unique_id=1920056436]
+position = Vector2(1150, 760)
 script = ExtResource("7_5m0si")
 
-[node name="collision" type="CollisionShape2D" parent="player" unique_id=1379865220]
+[node name="collision" type="CollisionShape2D" parent="player" unique_id=856211630]
 shape = SubResource("RectangleShape2D_1fhj6")
 
-[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1782597883]
+[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1228737333]
 sprite_frames = SubResource("SpriteFrames_6epoj")
 
-[node name="camera" type="Camera2D" parent="player" unique_id=1580444100]
+[node name="camera" type="Camera2D" parent="player" unique_id=1760376546]
 position = Vector2(-581, -220)
-limit_left = 0
+limit_left = 87
 limit_right = 12088
 
-[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=2036885388]
+[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=177048072]
 script = ExtResource("8_fmkxj")
 
-[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1451396760]
+[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1214362187]
 position = Vector2(960, 540)
 texture = ExtResource("7_7vr8w")
 
-[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=156617900]
+[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=740678862]
 position = Vector2(1418, 494)
 texture = ExtResource("8_dxpu0")
 
-[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=72227446]
+[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=56527644]
 anchors_preset = -1
 anchor_left = -0.03270269
 anchor_top = 0.0030468977
@@ -115,7 +152,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=181267046]
+[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=1007358228]
 anchors_preset = -1
 anchor_right = 0.23177083
 anchor_bottom = 0.1421875
@@ -128,33 +165,33 @@ text = "\"My briefcase! My beloved work briefcase... That's where I keep documen
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1536239233]
+[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1774327008]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=2015869879]
-position = Vector2(15445, 841)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1195630468]
+position = Vector2(11800, 867)
 shape = SubResource("RectangleShape2D_582hs")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1220686807]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1824011554]
 position = Vector2(266, 861)
 shape = SubResource("RectangleShape2D_582hs")
 
-[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=439528828]
+[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=934881406]
 position = Vector2(950, 92)
 texture = ExtResource("11_wd6c3")
 
-[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=2049488756]
-offset_left = -253.0
-offset_top = -39.0
-offset_right = 219.0
-offset_bottom = 44.0
+[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=1468713215]
+offset_left = -630.28546
+offset_top = -32.414455
+offset_right = 637.5429
+offset_bottom = 50.585545
 rotation = -0.017453292
 theme_override_font_sizes/font_size = 60
-text = "Investiga la casa"
+text = "Go to the witness's house"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=979305592]
+[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=593492569]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -163,12 +200,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=641869447]
+[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=1044313176]
 visible = false
 position = Vector2(960, 540)
 texture = ExtResource("12_7gyev")
+script = ExtResource("14_1x85o")
 
-[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1033137540]
+[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=235697901]
 offset_left = -186.0
 offset_top = -413.0
 offset_right = 177.0
@@ -178,84 +216,168 @@ text = "CLUES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="next" type="Button" parent="player/canvaslayer/cluesSprite" unique_id=1368950871]
-offset_left = 615.0
+[node name="back" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=592131143]
+offset_left = 597.0
 offset_top = -140.0
-offset_right = 719.0
-offset_bottom = 17.0
-text = "AVANZA"
+offset_right = 745.0
+offset_bottom = 68.0
+texture_normal = ExtResource("15_1fhj6")
+texture_hover = ExtResource("16_6epoj")
 
-[node name="back" type="Button" parent="player/canvaslayer/cluesSprite" unique_id=290193]
-offset_left = 615.0
-offset_top = 114.0
-offset_right = 719.0
-offset_bottom = 271.0
-text = "ATRÁS"
+[node name="next" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1914393019]
+offset_left = 735.0
+offset_top = 283.0
+offset_right = 883.0
+offset_bottom = 491.0
+rotation = 3.1415927
+texture_normal = ExtResource("15_1fhj6")
+texture_hover = ExtResource("16_6epoj")
 
-[node name="Label2" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1604021259]
+[node name="ClueName" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1910470833]
 offset_left = 68.0
 offset_top = -180.0
 offset_right = 552.0
 offset_bottom = -117.0
 theme_override_font_sizes/font_size = 32
-text = "La ventana rota"
+text = "No clues selected"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=24644536]
+[node name="ClueText" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=787297502]
+offset_left = 76.0
+offset_top = -104.0
+offset_right = 538.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="tb1" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=129019755]
 offset_left = -700.0
 offset_top = -140.0
 offset_right = -520.0
 offset_bottom = 40.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+stretch_mode = 3
 
-[node name="TextureButton2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1308947378]
+[node name="tb2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=2025778354]
 offset_left = -468.0
 offset_top = -140.0
 offset_right = -288.0
 offset_bottom = 40.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+stretch_mode = 3
 
-[node name="TextureButton3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=248488885]
+[node name="tb3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=47651073]
 offset_left = -236.0
 offset_top = -140.0
 offset_right = -56.0
 offset_bottom = 40.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+stretch_mode = 3
 
-[node name="TextureButton4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=2039686295]
+[node name="tb4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1309045325]
 offset_left = -700.0
 offset_top = 100.0
 offset_right = -520.0
 offset_bottom = 280.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+stretch_mode = 3
 
-[node name="TextureButton5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=826468940]
+[node name="tb5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=2047209001]
 offset_left = -468.0
 offset_top = 100.0
 offset_right = -288.0
 offset_bottom = 280.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+stretch_mode = 3
 
-[node name="TextureButton6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1097549523]
+[node name="tb6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1320058501]
 offset_left = -236.0
 offset_top = 100.0
 offset_right = -56.0
 offset_bottom = 280.0
 texture_normal = ExtResource("13_1x85o")
 texture_hover = ExtResource("14_0otry")
+stretch_mode = 3
 
-[node name="clues" type="Button" parent="player/canvaslayer" unique_id=274291108]
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=1349638695]
 offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
 icon = ExtResource("13_7gyev")
-flat = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1361703694]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=253768091]
+position = Vector2(858.5, 524.25)
+shape = SubResource("RectangleShape2D_6epoj")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1342225191]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1130924273]
+position = Vector2(2799.875, 647.25)
+shape = SubResource("RectangleShape2D_5turb")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=612885575]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1428574141]
+position = Vector2(4464.5, 652.25)
+shape = SubResource("RectangleShape2D_061y5")
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=471868244]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=674583526]
+position = Vector2(6135.25, 647.5)
+shape = SubResource("RectangleShape2D_3au6m")
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=629434834]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1129404850]
+position = Vector2(7808.25, 648.75)
+shape = SubResource("RectangleShape2D_r3eyu")
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=648556481]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1883750063]
+position = Vector2(9654.25, 616.75)
+shape = SubResource("RectangleShape2D_m25ji")
+
+[node name="Area2D7" type="Area2D" parent="." unique_id=140539130]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7" unique_id=666383225]
+position = Vector2(11313.75, 637.75)
+shape = SubResource("RectangleShape2D_scssp")
+
+[node name="Area2D8" type="Area2D" parent="." unique_id=344717892]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8" unique_id=1000375990]
+position = Vector2(2232.75, 604)
+shape = SubResource("RectangleShape2D_kkqeo")
+
+[node name="Area2D9" type="Area2D" parent="." unique_id=1499455354]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9" unique_id=1560342905]
+position = Vector2(3902.25, 608)
+shape = SubResource("RectangleShape2D_xcar7")
+
+[node name="Area2D10" type="Area2D" parent="." unique_id=994769533]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10" unique_id=789287363]
+position = Vector2(5580.5, 610)
+shape = SubResource("RectangleShape2D_m3phq")
+
+[node name="Area2D11" type="Area2D" parent="." unique_id=1274662671]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11" unique_id=1633569056]
+position = Vector2(7247.75, 604.5)
+shape = SubResource("RectangleShape2D_mice7")
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]

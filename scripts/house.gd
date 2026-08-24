@@ -5,11 +5,11 @@ extends Node2D
 @onready var skip_button = $player/canvaslayer/skip
 @onready var clues = $player/canvaslayer/clues
 @onready var areas: Array[Node] = [$door1, $door2, $window, $paintings, $books, $fireplace, $oinker, $woof]
-@onready var nextText = $player/canvaslayer/next/Label
 
 var camera_move_time := 2.0
 var skip_requested := false
 var visitedCount := 0
+var fade_time := 1.0
 
 var conversation: Array[Dictionary] = [
 	{"name": "Mayor Oinker", "text": "How could this have happened? It's horrible! This is intolerable!"},
@@ -63,13 +63,32 @@ func _onAreaVisited() -> void:
 			await get_tree().process_frame
 
 		dialog.start_dialog(finalConversation)
-		nextText.text = "Go to the witness's house"
 
 		while dialog.state != dialog.State.CLOSED:
 			await get_tree().process_frame
 
 		for area in areas:
 			area.caseClosed = true
+
+		await _fadeToStreets()
+
+func _fadeToStreets() -> void:
+	var fadeLayer := CanvasLayer.new()
+	fadeLayer.layer = 10
+	add_child(fadeLayer)
+
+	var fadeRect := ColorRect.new()
+	fadeRect.color = Color.BLACK
+	fadeRect.modulate.a = 0.0
+	fadeRect.mouse_filter = Control.MOUSE_FILTER_STOP
+	fadeRect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fadeLayer.add_child(fadeRect)
+
+	var tween := create_tween()
+	tween.tween_property(fadeRect, "modulate:a", 1.0, fade_time)
+	await tween.finished
+
+	get_tree().change_scene_to_file("res://scenes/street.tscn")
 
 func _wait(seconds: float) -> void:
 	var timer := get_tree().create_timer(seconds)

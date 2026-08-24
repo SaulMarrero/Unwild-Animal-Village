@@ -2,8 +2,53 @@
 
 [ext_resource type="Texture2D" uid="uid://s0ka215sffxl" path="res://sprites/hospital1.png" id="1_dt2uu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dt2uu"]
+size = Vector2(160.5, 795)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cglik"]
+size = Vector2(302, 569)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t8e7"]
+size = Vector2(495, 258.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1t44"]
+size = Vector2(325, 557.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87ikj"]
+size = Vector2(180.5, 278.5)
+
 [node name="hospital1" type="Node2D" unique_id=307043767]
 
 [node name="background" type="Sprite2D" parent="." unique_id=1069442678]
 position = Vector2(620, 540)
 texture = ExtResource("1_dt2uu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1264931223]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2122329299]
+position = Vector2(-600.75, 541.5)
+shape = SubResource("RectangleShape2D_dt2uu")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=637267254]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=580267293]
+position = Vector2(-105, 411.5)
+shape = SubResource("RectangleShape2D_cglik")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=6315841]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=13461686]
+position = Vector2(354.5, 284.75)
+shape = SubResource("RectangleShape2D_1t8e7")
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=787863874]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=1760909886]
+position = Vector2(819.5, 406.25)
+shape = SubResource("RectangleShape2D_r1t44")
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=1962571867]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1312299063]
+position = Vector2(1418.75, 280.75)
+shape = SubResource("RectangleShape2D_87ikj")

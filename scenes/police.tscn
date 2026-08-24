@@ -1,9 +1,68 @@
 [gd_scene format=3 uid="uid://bu543w3ouqthu"]
 
 [ext_resource type="Texture2D" uid="uid://wgov2dked8ys" path="res://sprites/policeRoom.png" id="1_iyusq"]
+[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="2_0bal8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_71yvf"]
+radius = 127.57743
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3yj"]
+size = Vector2(259.5, 298.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgu1n"]
+size = Vector2(271, 433.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63tnv"]
+size = Vector2(651.5, 303)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjudb"]
+size = Vector2(433, 249)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psgsg"]
+size = Vector2(305, 461)
 
 [node name="police" type="Node2D" unique_id=439295226]
 
 [node name="background" type="Sprite2D" parent="." unique_id=2061449787]
 position = Vector2(620, 540)
 texture = ExtResource("1_iyusq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2130716813]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1935580026]
+position = Vector2(1529, 293)
+shape = SubResource("CircleShape2D_71yvf")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1402173920]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1739185524]
+position = Vector2(1061.25, 274.75)
+shape = SubResource("RectangleShape2D_lh3yj")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=734759909]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=1196176172]
+position = Vector2(723.5, 468.25)
+shape = SubResource("RectangleShape2D_tgu1n")
+
+[node name="Area2D4" type="Area2D" parent="." unique_id=943797699]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" unique_id=1289987953]
+position = Vector2(177.25, 560.5)
+shape = SubResource("RectangleShape2D_63tnv")
+
+[node name="Area2D5" type="Area2D" parent="." unique_id=630757135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" unique_id=1164095304]
+position = Vector2(-277.5, 246.5)
+shape = SubResource("RectangleShape2D_pjudb")
+
+[node name="Area2D6" type="Area2D" parent="." unique_id=1111065374]
+position = Vector2(-300, 760)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D6" unique_id=315384442]
+texture = ExtResource("2_0bal8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" unique_id=1648682809]
+position = Vector2(-3.5, -3.5)
+shape = SubResource("RectangleShape2D_psgsg")
