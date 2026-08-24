@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bu543w3ouqthu"]
+
+[ext_resource type="Texture2D" uid="uid://wgov2dked8ys" path="res://sprites/policeRoom.png" id="1_iyusq"]
+
+[node name="police" type="Node2D" unique_id=439295226]
+
+[node name="background" type="Sprite2D" parent="." unique_id=2061449787]
+position = Vector2(620, 540)
+texture = ExtResource("1_iyusq")

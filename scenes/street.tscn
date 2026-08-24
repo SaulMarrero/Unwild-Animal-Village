@@ -38,8 +38,8 @@ size = Vector2(27.5, 410)
 script = ExtResource("1_wd6c3")
 
 [node name="floor" type="Sprite2D" parent="." unique_id=848129823]
-position = Vector2(7800.0005, 930)
-scale = Vector2(3.9, 1)
+position = Vector2(6088, 930)
+scale = Vector2(3, 0.986)
 texture = ExtResource("1_3ffmx")
 
 [node name="house1" type="Sprite2D" parent="." unique_id=463781558]
@@ -58,16 +58,8 @@ texture = ExtResource("3_yrasx")
 position = Vector2(7670, 390)
 texture = ExtResource("3_yrasx")
 
-[node name="house5" type="Sprite2D" parent="." unique_id=1686058520]
-position = Vector2(9342, 390)
-texture = ExtResource("3_yrasx")
-
-[node name="house6" type="Sprite2D" parent="." unique_id=381365351]
-position = Vector2(11014, 390)
-texture = ExtResource("3_yrasx")
-
 [node name="hospital" type="Sprite2D" parent="." unique_id=140044106]
-position = Vector2(13088, 390)
+position = Vector2(9681, 392)
 texture = ExtResource("3_wjoh7")
 
 [node name="mansion" type="Sprite2D" parent="." unique_id=343256675]
@@ -75,7 +67,7 @@ position = Vector2(550, 390)
 texture = ExtResource("4_7vr8w")
 
 [node name="police" type="Sprite2D" parent="." unique_id=1155225032]
-position = Vector2(15050, 390)
+position = Vector2(11538, 392)
 texture = ExtResource("5_5m0si")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=453470713]
@@ -91,7 +83,7 @@ sprite_frames = SubResource("SpriteFrames_6epoj")
 [node name="camera" type="Camera2D" parent="player" unique_id=1580444100]
 position = Vector2(-581, -220)
 limit_left = 0
-limit_right = 15600
+limit_right = 12088
 
 [node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=2036885388]
 script = ExtResource("8_fmkxj")

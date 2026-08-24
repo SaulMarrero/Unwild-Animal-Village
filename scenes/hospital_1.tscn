@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dcnaxeq3n16jr"]
+
+[ext_resource type="Texture2D" uid="uid://s0ka215sffxl" path="res://sprites/hospital1.png" id="1_dt2uu"]
+
+[node name="hospital1" type="Node2D" unique_id=307043767]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1069442678]
+position = Vector2(620, 540)
+texture = ExtResource("1_dt2uu")

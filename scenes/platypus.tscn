@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://mciv3r8h28y6"]
+
+[ext_resource type="Texture2D" uid="uid://djscdhinnlo7" path="res://sprites/frogHouse.png" id="1_j5wpr"]
+
+[node name="platypus" type="Node2D" unique_id=628689518]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1927034342]
+position = Vector2(960, 540)
+texture = ExtResource("1_j5wpr")

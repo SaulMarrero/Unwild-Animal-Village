@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://yo7ixaejvp1s"]
+
+[node name="courtroom" type="Node2D" unique_id=1168648940]
+
+[node name="background" type="Sprite2D" parent="." unique_id=1374033420]
