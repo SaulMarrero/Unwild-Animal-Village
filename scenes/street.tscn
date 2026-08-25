@@ -19,7 +19,13 @@
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="14_1x85o"]
 [ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="15_1fhj6"]
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="16_6epoj"]
-[ext_resource type="Script" uid="uid://d0g2mg3d4572r" path="res://scenes/miss_sheep_door.gd" id="20_6epoj"]
+[ext_resource type="Script" uid="uid://d0g2mg3d4572r" path="res://scripts/miss_sheep_door.gd" id="20_6epoj"]
+[ext_resource type="Script" uid="uid://dt1djuedk3x7m" path="res://scripts/oinker_door.gd" id="20_m25ji"]
+[ext_resource type="Script" uid="uid://t5g4d1gip5wt" path="res://scripts/stinger_door.gd" id="21_3au6m"]
+[ext_resource type="Script" uid="uid://dl0i4inwwj11t" path="res://scripts/hospital_door.gd" id="21_5turb"]
+[ext_resource type="Script" uid="uid://breekdkxy7w4l" path="res://scripts/platypus_door.gd" id="21_061y5"]
+[ext_resource type="Script" uid="uid://t4b2x3svm2bl" path="res://scripts/frog_door.gd" id="21_r3eyu"]
+[ext_resource type="Script" uid="uid://c5qktl1u6v10u" path="res://scripts/police_door.gd" id="22_061y5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj6"]
 size = Vector2(60, 60)
@@ -316,6 +322,7 @@ offset_bottom = 149.0
 icon = ExtResource("13_7gyev")
 
 [node name="oinkerDoor" type="Area2D" parent="." unique_id=1361703694]
+script = ExtResource("20_m25ji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oinkerDoor" unique_id=253768091]
 position = Vector2(858.5, 524.25)
@@ -329,30 +336,35 @@ position = Vector2(2799.875, 647.25)
 shape = SubResource("RectangleShape2D_5turb")
 
 [node name="frogDoor" type="Area2D" parent="." unique_id=612885575]
+script = ExtResource("21_r3eyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="frogDoor" unique_id=1428574141]
 position = Vector2(4464.5, 652.25)
 shape = SubResource("RectangleShape2D_061y5")
 
 [node name="stingerDoor" type="Area2D" parent="." unique_id=471868244]
+script = ExtResource("21_3au6m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stingerDoor" unique_id=674583526]
 position = Vector2(6135.25, 647.5)
 shape = SubResource("RectangleShape2D_3au6m")
 
 [node name="platypusDoor" type="Area2D" parent="." unique_id=629434834]
+script = ExtResource("21_061y5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platypusDoor" unique_id=1129404850]
 position = Vector2(7808.25, 648.75)
 shape = SubResource("RectangleShape2D_r3eyu")
 
 [node name="hospitalDoor" type="Area2D" parent="." unique_id=648556481]
+script = ExtResource("21_5turb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hospitalDoor" unique_id=1883750063]
 position = Vector2(9654.25, 616.75)
 shape = SubResource("RectangleShape2D_m25ji")
 
 [node name="policeDoor" type="Area2D" parent="." unique_id=140539130]
+script = ExtResource("22_061y5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="policeDoor" unique_id=666383225]
 position = Vector2(11313.75, 637.75)
@@ -383,4 +395,10 @@ position = Vector2(7247.75, 604.5)
 shape = SubResource("RectangleShape2D_mice7")
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
+[connection signal="input_event" from="oinkerDoor" to="oinkerDoor" method="_on_input_event"]
 [connection signal="input_event" from="missSheepDoor" to="missSheepDoor" method="_on_input_event"]
+[connection signal="input_event" from="frogDoor" to="frogDoor" method="_on_input_event"]
+[connection signal="input_event" from="stingerDoor" to="stingerDoor" method="_on_input_event"]
+[connection signal="input_event" from="platypusDoor" to="platypusDoor" method="_on_input_event"]
+[connection signal="input_event" from="hospitalDoor" to="hospitalDoor" method="_on_input_event"]
+[connection signal="input_event" from="policeDoor" to="policeDoor" method="_on_input_event"]
