@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cgtwuewwcagiq" path="res://sprites/sheepHouse.png" id="1_lcdgc"]
 [ext_resource type="Script" uid="uid://xr24ti50a04r" path="res://scripts/sheep_house.gd" id="1_rmsad"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_rmsad"]
+[ext_resource type="Script" uid="uid://bvbrttq88i15f" path="res://scripts/miss_sheepSheep.gd" id="3_6dfug"]
 [ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_6ffdd"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_tbnm4"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_tlxup"]
@@ -16,9 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_u76wh"]
 [ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_jinbj"]
 [ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="16_6ffdd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlxup"]
-size = Vector2(240, 400)
+[ext_resource type="Script" uid="uid://i6wkppj1ype6" path="res://scripts/clockSheep.gd" id="18_pdrpi"]
+[ext_resource type="Script" uid="uid://bg3mjxlvdqjch" path="res://scripts/windowSheep.gd" id="19_gy7y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87qf1"]
 size = Vector2(60, 60)
@@ -37,6 +37,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7vspu"]
 size = Vector2(27.5, 410)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlxup"]
+size = Vector2(240, 400)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ffdd"]
 size = Vector2(542, 418)
 
@@ -50,25 +53,14 @@ script = ExtResource("1_rmsad")
 position = Vector2(960, 540)
 texture = ExtResource("1_lcdgc")
 
-[node name="missSheep" type="Area2D" parent="." unique_id=1260924742]
-position = Vector2(350, 760)
-
-[node name="AnimatedSprite2D" type="Sprite2D" parent="missSheep" unique_id=473141074]
-texture = ExtResource("16_6ffdd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="missSheep" unique_id=1387379038]
-shape = SubResource("RectangleShape2D_tlxup")
-
 [node name="player" type="CharacterBody2D" parent="." unique_id=81906358]
-position = Vector2(2221, 760)
+position = Vector2(1600, 760)
 script = ExtResource("2_rmsad")
 
 [node name="collision" type="CollisionShape2D" parent="player" unique_id=466243927]
-position = Vector2(-650, 0)
 shape = SubResource("RectangleShape2D_87qf1")
 
 [node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1185712532]
-position = Vector2(-650, 0)
 sprite_frames = SubResource("SpriteFrames_qa1kr")
 
 [node name="camera" type="Camera2D" parent="player" unique_id=889816263]
@@ -140,7 +132,7 @@ offset_right = 637.5429
 offset_bottom = 50.585545
 rotation = -0.017453292
 theme_override_font_sizes/font_size = 60
-text = "Explore the house for clues"
+text = "Talk with Miss Sheep"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -269,16 +261,31 @@ offset_bottom = 149.0
 icon = ExtResource("14_jinbj")
 flat = true
 
-[node name="clock" type="Area2D" parent="." unique_id=1670644714]
+[node name="missSheep" type="Area2D" parent="." unique_id=1260924742]
+position = Vector2(350, 760)
+script = ExtResource("3_6dfug")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="clock" unique_id=1716259483]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="missSheep" unique_id=473141074]
+texture = ExtResource("16_6ffdd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="missSheep" unique_id=1387379038]
+shape = SubResource("RectangleShape2D_tlxup")
+
+[node name="window" type="Area2D" parent="." unique_id=1670644714]
+script = ExtResource("19_gy7y1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="window" unique_id=1716259483]
 position = Vector2(761, 358)
 shape = SubResource("RectangleShape2D_6ffdd")
 
-[node name="window" type="Area2D" parent="." unique_id=1205542438]
+[node name="clock" type="Area2D" parent="." unique_id=1205542438]
+script = ExtResource("18_pdrpi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="window" unique_id=1459858891]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clock" unique_id=1459858891]
 position = Vector2(1424, 320)
 shape = SubResource("CircleShape2D_tbnm4")
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
+[connection signal="input_event" from="missSheep" to="missSheep" method="_on_input_event"]
+[connection signal="input_event" from="window" to="window" method="_on_input_event"]
+[connection signal="input_event" from="clock" to="clock" method="_on_input_event"]

@@ -1,9 +1,13 @@
 extends Node2D
 
 @onready var canvaslayer = $player/canvaslayer
+@onready var nextText = $player/canvaslayer/next/Label
 
 func _ready() -> void:
 	canvaslayer.show_next()
+
+	if Clues.clue6:
+		nextText.text = "Go to Chief Teddy's office"
 
 	var layer := CanvasLayer.new()
 	layer.layer = 10

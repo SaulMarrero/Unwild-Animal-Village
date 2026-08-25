@@ -14,7 +14,7 @@ var clues: Array[Dictionary] = [
 	{"name": "Broken Window", "text": "There were no marks or traces on the window. The gap isn't very big either."},
 	{"name": "Security Guard", "text": "A guard was watching the entrance, but he got poisoned."},
 	{"name": "Witness", "text": "A witness called the police after hearing a loud noise. They showed up really fast."},
-	{"name": "Ink Stain", "text": "Fresh ink smudge matching the mayor's pen."},
+	{"name": "Miss Sheep", "text": "Miss Sheep saw the police arrive a few minutes after the noises."},
 	{"name": "Witness Statement", "text": "A neighbor claims to have heard a scream."},
 	{"name": "Ripped Fabric", "text": "A piece of cloth caught on the fence."},
 	{"name": "Empty Vial", "text": "Smells faintly of a sleeping draught."},

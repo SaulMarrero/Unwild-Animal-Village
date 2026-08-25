@@ -40,3 +40,29 @@ func isUnlocked(number: int) -> bool:
 		17: return clue17
 		18: return clue18
 	return false
+
+func unlockedCount() -> int:
+	var count := 0
+	for i in range(1, 19):
+		if isUnlocked(i):
+			count += 1
+	return count
+
+func currentDoor() -> String:
+	var count := unlockedCount()
+	if count <= 5:
+		return "missSheepDoor"
+	elif count == 6:
+		return "policeDoor"
+	else:
+		return "hospitalDoor"
+
+func currentDoorMessage() -> String:
+	match currentDoor():
+		"missSheepDoor":
+			return "(I should go visit the witness, Miss Sheep.)"
+		"policeDoor":
+			return "(I should go visit Chief Teddy at the police station.)"
+		"hospitalDoor":
+			return "(I should visit the guard at the hospital, he must be awake by now.)"
+	return ""
