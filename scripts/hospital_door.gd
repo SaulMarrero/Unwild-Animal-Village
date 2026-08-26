@@ -1,7 +1,7 @@
 extends Area2D
 
 var doorId := "hospitalDoor"
-var targetScene := "res://scenes/hospital1.tscn"
+var targetScene := "res://scenes/hospital_1.tscn"
 var fade_time := 1.0
 
 @onready var dialog = $"../player/canvaslayer"
@@ -13,10 +13,7 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		if Clues.currentDoor() == doorId:
 			_fadeToScene()
 		else:
-			var blockedLine: Array[Dictionary] = [
-				{"name": "Detective Fox", "text": Clues.currentDoorMessage()}
-			]
-			dialog.start_dialog(blockedLine)
+			dialog.start_dialog(Clues.currentDoorMessage())
 
 func _fadeToScene() -> void:
 	var layer := CanvasLayer.new()

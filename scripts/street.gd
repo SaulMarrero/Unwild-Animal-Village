@@ -6,7 +6,9 @@ extends Node2D
 func _ready() -> void:
 	canvaslayer.show_next()
 
-	if Clues.clue6:
+	if Clues.unlockedCount() >= 8:
+		nextText.text = "Go to the hospital"
+	elif Clues.clue6:
 		nextText.text = "Go to Chief Teddy's office"
 
 	var layer := CanvasLayer.new()

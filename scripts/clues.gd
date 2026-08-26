@@ -54,15 +54,24 @@ func currentDoor() -> String:
 		return "missSheepDoor"
 	elif count == 6:
 		return "policeDoor"
-	else:
+	elif count == 8:
 		return "hospitalDoor"
+	else:
+		return "policeDoor"
 
-func currentDoorMessage() -> String:
+func currentDoorMessage() -> Array[Dictionary]:
 	match currentDoor():
 		"missSheepDoor":
-			return "(I should go visit the witness, Miss Sheep.)"
+			return [
+				{"name": "Detective Fox", "text": "(I should go visit the witness, Miss Sheep.)"}
+			]
 		"policeDoor":
-			return "(I should go visit Chief Teddy at the police station.)"
+			return [
+				{"name": "Detective Fox", "text": "(I should go visit Chief Teddy at the police station.)"}
+			]
 		"hospitalDoor":
-			return "(I should visit the guard at the hospital, he must be awake by now.)"
-	return ""
+			return [
+				{"name": "Detective Fox", "text": "(I need to go to the hospital to question the poisoned guard.)"},
+				{"name": "Detective Fox", "text": "(I should also talk to this Doctor Meow to confirm Chief Teddy's heart condition.)"}
+			]
+	return []

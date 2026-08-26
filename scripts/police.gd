@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var canvaslayer = $player/canvaslayer
-@onready var areas: Array[Node] = [$teddy, $clock, $painting, $furniture, $cock_board]
+@onready var areas: Array[Node] = [$teddy, $clock, $painting, $furniture, $cork_board]
 
 var fade_time := 1.0
 var visitedCount := 0

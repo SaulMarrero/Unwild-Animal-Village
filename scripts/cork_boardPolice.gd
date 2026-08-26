@@ -8,12 +8,12 @@ var caseClosed := false
 @onready var dialog = $"../player/canvaslayer"
 
 var conversation: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(You can see Oinker's house from here. This is probably where the witness saw the thief run off.)"},
-	{"name": "Detective Fox", "text": "(So far everything matches up with the police report.)"}
+	{"name": "Detective Fox", "text": "(The classic corkboard every police station seems to have.)"},
+	{"name": "Detective Fox", "text": "(Looks empty. Not surprising, crime's pretty rare in Animal Village.)"}
 ]
 
 var shortLine: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(You can see Oinker's house from here. This is probably where the witness saw the thief run off.)"}
+	{"name": "Detective Fox", "text": "(Looks empty. Not surprising, crime's pretty rare in Animal Village.)"}
 ]
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
@@ -21,7 +21,8 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		get_viewport().set_input_as_handled()
 
 		if visited:
-			dialog.start_dialog(shortLine)
+			if shortLine.size() > 0:
+				dialog.start_dialog(shortLine)
 			return
 
 		dialog.start_dialog(conversation)
