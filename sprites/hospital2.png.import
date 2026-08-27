@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djscdhinnlo7"
-path="res://.godot/imported/frogHouse.png-c78fed10d81587b1e86bf349c1141f5c.ctex"
+path="res://.godot/imported/hospital2.png-fb87325cecc03d487f0a914ec1d90f27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/frogHouse.png"
-dest_files=["res://.godot/imported/frogHouse.png-c78fed10d81587b1e86bf349c1141f5c.ctex"]
+source_file="res://sprites/hospital2.png"
+dest_files=["res://.godot/imported/hospital2.png-fb87325cecc03d487f0a914ec1d90f27.ctex"]
 
 [params]
 

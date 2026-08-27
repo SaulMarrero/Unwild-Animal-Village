@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://dcnaxeq3n16jr"]
 
 [ext_resource type="Texture2D" uid="uid://s0ka215sffxl" path="res://sprites/hospital1.png" id="1_dt2uu"]
+[ext_resource type="Script" uid="uid://bvdjhovgm7aro" path="res://scenes/door_1Hospital.gd" id="2_6236t"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_o2mps"]
+[ext_resource type="Script" uid="uid://dtgamj5gqdjo4" path="res://scenes/guard_doorHospital.gd" id="3_b46sq"]
 [ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_eyxo2"]
+[ext_resource type="Script" uid="uid://cursdgweqn5dm" path="res://scenes/signHospital.gd" id="4_d125t"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_rgmy0"]
+[ext_resource type="Script" uid="uid://burqe0bqcd6mb" path="res://scenes/door_2Hospital.gd" id="5_qjoq3"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_yo7eh"]
 [ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_hayx8"]
+[ext_resource type="Script" uid="uid://cyd8a1rax56vl" path="res://scenes/sign_2Hospital.gd" id="6_hqgev"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_6236t"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_b46sq"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_d125t"]
@@ -53,31 +58,36 @@ size = Vector2(27.5, 410)
 position = Vector2(620, 540)
 texture = ExtResource("1_dt2uu")
 
-[node name="secretDoor" type="Area2D" parent="." unique_id=1264931223]
+[node name="door1" type="Area2D" parent="." unique_id=1264931223]
+script = ExtResource("2_6236t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="secretDoor" unique_id=2122329299]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door1" unique_id=2122329299]
 position = Vector2(-600.75, 541.5)
 shape = SubResource("RectangleShape2D_dt2uu")
 
 [node name="guardDoor" type="Area2D" parent="." unique_id=637267254]
+script = ExtResource("3_b46sq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="guardDoor" unique_id=580267293]
 position = Vector2(-105, 411.5)
 shape = SubResource("RectangleShape2D_cglik")
 
 [node name="sign" type="Area2D" parent="." unique_id=6315841]
+script = ExtResource("4_d125t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign" unique_id=13461686]
 position = Vector2(354.5, 284.75)
 shape = SubResource("RectangleShape2D_1t8e7")
 
-[node name="meowOffice" type="Area2D" parent="." unique_id=787863874]
+[node name="door2" type="Area2D" parent="." unique_id=787863874]
+script = ExtResource("5_qjoq3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="meowOffice" unique_id=1760909886]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door2" unique_id=1760909886]
 position = Vector2(819.5, 406.25)
 shape = SubResource("RectangleShape2D_r1t44")
 
 [node name="sign2" type="Area2D" parent="." unique_id=1962571867]
+script = ExtResource("6_hqgev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign2" unique_id=1312299063]
 position = Vector2(1418.75, 280.75)
@@ -162,7 +172,7 @@ offset_right = 637.5429
 offset_bottom = 50.585545
 rotation = -0.017453292
 theme_override_font_sizes/font_size = 60
-text = "Talk with Chief Teddy"
+text = "Talk with Meow and the guard"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -291,4 +301,9 @@ offset_bottom = 149.0
 icon = ExtResource("14_eopvm")
 flat = true
 
+[connection signal="input_event" from="door1" to="door1" method="_on_input_event"]
+[connection signal="input_event" from="guardDoor" to="guardDoor" method="_on_input_event"]
+[connection signal="input_event" from="sign" to="sign" method="_on_input_event"]
+[connection signal="input_event" from="door2" to="door2" method="_on_input_event"]
+[connection signal="input_event" from="sign2" to="sign2" method="_on_input_event"]
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]

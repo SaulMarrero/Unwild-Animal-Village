@@ -1,0 +1,295 @@
+[gd_scene format=3 uid="uid://be6evwyv5dl6h"]
+
+[ext_resource type="Texture2D" uid="uid://djscdhinnlo7" path="res://sprites/hospital2.png" id="1_behnj"]
+[ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_7ps4d"]
+[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_fj5fm"]
+[ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_4ak7j"]
+[ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_4cxir"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_vdadm"]
+[ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_d4gm2"]
+[ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_luevo"]
+[ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_usgl0"]
+[ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="10_gjsvt"]
+[ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="11_i5umx"]
+[ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="12_vobt7"]
+[ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_o15xq"]
+[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_gt4rw"]
+[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="15_x461u"]
+[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="16_fcw71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sq0ng"]
+size = Vector2(60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n66fh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fj5fm")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbka1"]
+size = Vector2(27.5, 410)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7c38"]
+size = Vector2(308, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi6xx"]
+size = Vector2(311, 479)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xugq"]
+size = Vector2(586, 365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkcb2"]
+size = Vector2(415.5, 193.5)
+
+[node name="hospital_2" type="Node2D" unique_id=1755170293]
+
+[node name="background" type="Sprite2D" parent="." unique_id=590911897]
+position = Vector2(960, 540)
+texture = ExtResource("1_behnj")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=1045704825]
+position = Vector2(1600, 760)
+script = ExtResource("2_7ps4d")
+
+[node name="collision" type="CollisionShape2D" parent="player" unique_id=958760042]
+shape = SubResource("RectangleShape2D_sq0ng")
+
+[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1697671632]
+sprite_frames = SubResource("SpriteFrames_n66fh")
+
+[node name="camera" type="Camera2D" parent="player" unique_id=620417017]
+position = Vector2(-1272, -220)
+limit_left = 0
+limit_right = 1920
+
+[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=19622609]
+script = ExtResource("4_4ak7j")
+
+[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1896820750]
+position = Vector2(960, 540)
+texture = ExtResource("5_4cxir")
+
+[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=1592403374]
+position = Vector2(1418, 494)
+texture = ExtResource("6_vdadm")
+
+[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=378667996]
+anchors_preset = -1
+anchor_left = -0.03270269
+anchor_top = 0.0030468977
+anchor_right = 0.04683447
+anchor_bottom = 0.0030468977
+offset_left = 313.0
+offset_top = 672.0
+offset_right = 590.0
+offset_bottom = 874.0
+rotation = -0.05235988
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Miss
+Sheep"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=955398687]
+anchors_preset = -1
+anchor_right = 0.23177083
+anchor_bottom = 0.1421875
+offset_left = 312.0
+offset_top = 860.0
+offset_right = 1188.0
+offset_bottom = 929.0
+theme_override_font_sizes/font_size = 42
+text = "\"My briefcase! My beloved work briefcase... That's where I keep documents about construction projects, events, and lots of other things!\""
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1820478240]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=170490019]
+position = Vector2(1650, 867)
+shape = SubResource("RectangleShape2D_wbka1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=296487867]
+position = Vector2(266, 861)
+shape = SubResource("RectangleShape2D_wbka1")
+
+[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=604956628]
+position = Vector2(950, 92)
+texture = ExtResource("7_d4gm2")
+
+[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=233680694]
+offset_left = -630.28546
+offset_top = -32.414455
+offset_right = 637.5429
+offset_bottom = 50.585545
+rotation = -0.017453292
+theme_override_font_sizes/font_size = 60
+text = "Talk with Meow and the guard"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=1722200088]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=437023600]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("8_luevo")
+script = ExtResource("9_usgl0")
+
+[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1216145666]
+offset_left = -186.0
+offset_top = -413.0
+offset_right = 177.0
+offset_bottom = -248.0
+theme_override_font_sizes/font_size = 120
+text = "CLUES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=754530590]
+offset_left = 597.0
+offset_top = -140.0
+offset_right = 745.0
+offset_bottom = 68.0
+texture_normal = ExtResource("10_gjsvt")
+texture_hover = ExtResource("11_i5umx")
+
+[node name="next" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=714004914]
+offset_left = 735.0
+offset_top = 283.0
+offset_right = 883.0
+offset_bottom = 491.0
+rotation = 3.1415927
+texture_normal = ExtResource("10_gjsvt")
+texture_hover = ExtResource("11_i5umx")
+
+[node name="ClueName" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=632388824]
+offset_left = 68.0
+offset_top = -180.0
+offset_right = 552.0
+offset_bottom = -117.0
+theme_override_font_sizes/font_size = 32
+text = "No clues selected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClueText" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=529227276]
+offset_left = 76.0
+offset_top = -104.0
+offset_right = 538.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="tb1" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=340068596]
+offset_left = -700.0
+offset_top = -140.0
+offset_right = -520.0
+offset_bottom = 40.0
+texture_normal = ExtResource("12_vobt7")
+texture_hover = ExtResource("13_o15xq")
+stretch_mode = 3
+
+[node name="tb2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1678655121]
+offset_left = -468.0
+offset_top = -140.0
+offset_right = -288.0
+offset_bottom = 40.0
+texture_normal = ExtResource("12_vobt7")
+texture_hover = ExtResource("13_o15xq")
+stretch_mode = 3
+
+[node name="tb3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=215128092]
+offset_left = -236.0
+offset_top = -140.0
+offset_right = -56.0
+offset_bottom = 40.0
+texture_normal = ExtResource("12_vobt7")
+texture_hover = ExtResource("13_o15xq")
+stretch_mode = 3
+
+[node name="tb4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1283228380]
+offset_left = -700.0
+offset_top = 100.0
+offset_right = -520.0
+offset_bottom = 280.0
+texture_normal = ExtResource("12_vobt7")
+texture_hover = ExtResource("13_o15xq")
+stretch_mode = 3
+
+[node name="tb5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1726546727]
+offset_left = -468.0
+offset_top = 100.0
+offset_right = -288.0
+offset_bottom = 280.0
+texture_normal = ExtResource("12_vobt7")
+texture_hover = ExtResource("13_o15xq")
+stretch_mode = 3
+
+[node name="tb6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=56633430]
+offset_left = -236.0
+offset_top = 100.0
+offset_right = -56.0
+offset_bottom = 280.0
+texture_normal = ExtResource("12_vobt7")
+texture_hover = ExtResource("13_o15xq")
+stretch_mode = 3
+
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=1882520377]
+offset_left = 1772.0
+offset_top = 13.0
+offset_right = 1908.0
+offset_bottom = 149.0
+icon = ExtResource("14_gt4rw")
+flat = true
+
+[node name="meow" type="Area2D" parent="." unique_id=398862950]
+position = Vector2(350, 760)
+
+[node name="Sprite2D" type="Sprite2D" parent="meow" unique_id=1961228601]
+texture = ExtResource("15_x461u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meow" unique_id=2124537322]
+position = Vector2(-4, -6)
+shape = SubResource("RectangleShape2D_f7c38")
+
+[node name="wolf" type="Area2D" parent="." unique_id=386613583]
+position = Vector2(665, 760)
+
+[node name="Sprite2D" type="Sprite2D" parent="wolf" unique_id=149826098]
+texture = ExtResource("16_fcw71")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wolf" unique_id=1453836536]
+position = Vector2(8.5, -5.5)
+shape = SubResource("RectangleShape2D_gi6xx")
+
+[node name="paintings" type="Area2D" parent="." unique_id=830245432]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paintings" unique_id=1636758494]
+position = Vector2(490, 196.5)
+shape = SubResource("RectangleShape2D_7xugq")
+
+[node name="books" type="Area2D" parent="." unique_id=4044844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="books" unique_id=892015114]
+position = Vector2(1336.75, 180.75)
+shape = SubResource("RectangleShape2D_fkcb2")
+
+[connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
