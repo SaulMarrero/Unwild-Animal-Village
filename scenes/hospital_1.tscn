@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://dcnaxeq3n16jr"]
 
+[ext_resource type="Script" uid="uid://bylcpetq2446e" path="res://scripts/hospital_1.gd" id="1_b46sq"]
 [ext_resource type="Texture2D" uid="uid://s0ka215sffxl" path="res://sprites/hospital1.png" id="1_dt2uu"]
-[ext_resource type="Script" uid="uid://bvdjhovgm7aro" path="res://scenes/door_1Hospital.gd" id="2_6236t"]
+[ext_resource type="Script" uid="uid://bvdjhovgm7aro" path="res://scripts/door_1Hospital.gd" id="2_6236t"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_o2mps"]
-[ext_resource type="Script" uid="uid://dtgamj5gqdjo4" path="res://scenes/guard_doorHospital.gd" id="3_b46sq"]
+[ext_resource type="Script" uid="uid://dtgamj5gqdjo4" path="res://scripts/guard_doorHospital.gd" id="3_b46sq"]
 [ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_eyxo2"]
-[ext_resource type="Script" uid="uid://cursdgweqn5dm" path="res://scenes/signHospital.gd" id="4_d125t"]
+[ext_resource type="Script" uid="uid://cursdgweqn5dm" path="res://scripts/signHospital.gd" id="4_d125t"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_rgmy0"]
-[ext_resource type="Script" uid="uid://burqe0bqcd6mb" path="res://scenes/door_2Hospital.gd" id="5_qjoq3"]
+[ext_resource type="Script" uid="uid://burqe0bqcd6mb" path="res://scripts/door_2Hospital.gd" id="5_qjoq3"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_yo7eh"]
 [ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_hayx8"]
-[ext_resource type="Script" uid="uid://cyd8a1rax56vl" path="res://scenes/sign_2Hospital.gd" id="6_hqgev"]
+[ext_resource type="Script" uid="uid://cyd8a1rax56vl" path="res://scripts/sign_2Hospital.gd" id="6_hqgev"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_6236t"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_b46sq"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_d125t"]
@@ -53,6 +54,7 @@ animations = [{
 size = Vector2(27.5, 410)
 
 [node name="hospital1" type="Node2D" unique_id=307043767]
+script = ExtResource("1_b46sq")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1069442678]
 position = Vector2(620, 540)

@@ -7,7 +7,7 @@ var caseClosed := false
 
 @onready var dialog = $"../player/canvaslayer"
 
-var conversation: Array[Dictionary] = [
+var conversationFirstVisit: Array[Dictionary] = [
 	{"name": "Partner Woof", "text": "Excuse me, are you Mr. Teddy, the head of the police officers?"},
 	{"name": "Partner Woof", "text": "We're here to gather information about the robbery at Mayor Oinker's house."},
 	{"name": "Chief Teddy", "text": "Chief, not mister."},
@@ -31,12 +31,11 @@ var conversation: Array[Dictionary] = [
 	{"name": "Detective Fox", "text": "(But we have no reason to doubt it for now.)"}
 ]
 
-var shortLine: Array[Dictionary] = [
-	{"name": "Chief Teddy", "text": "It's true I'm the only one he told everything to."},
-	{"name": "Chief Teddy", "text": "Mayor Oinker gave me some papers with all his passwords and security details."},
-	{"name": "Detective Fox", "text": "And why would that rule you out as a suspect?"},
-	{"name": "Chief Teddy", "text": "Because I can't run. I have heart failure"}
+var conversationSecondVisit: Array[Dictionary] = [
+	{"name": "Detective Fox", "text": "(Placeholder text for Teddy's second conversation.)"}
 ]
+
+var shortLine: Array[Dictionary] = []
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event.is_action_pressed("click") and not get_viewport().gui_get_hovered_control():
@@ -47,10 +46,14 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 				dialog.start_dialog(shortLine)
 			return
 
-		dialog.start_dialog(conversation)
+		if Clues.unlockedCount() >= 10:
+			dialog.start_dialog(conversationSecondVisit)
+		else:
+			dialog.start_dialog(conversationFirstVisit)
+			_unlockClues()
+
 		visited = true
 		investigated.emit()
-		_unlockClues()
 
 func _unlockClues() -> void:
 	while dialog.state != dialog.State.CLOSED:

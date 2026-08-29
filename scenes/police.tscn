@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="13_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="14_n0k4x"]
 [ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="15_f6itx"]
+[ext_resource type="Script" uid="uid://dlxyimdgr0jdv" path="res://scenes/stingerPolice.gd" id="22_s8d2h"]
+[ext_resource type="Script" uid="uid://jhx72di30okn" path="res://scenes/frogPolice.gd" id="23_vnkqh"]
+[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="24_n0k4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71yvf"]
 radius = 127.57743
@@ -53,6 +56,12 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdvoy"]
 size = Vector2(27.5, 410)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6itx"]
+size = Vector2(294, 458)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prhth"]
+size = Vector2(286, 444)
 
 [node name="police" type="Node2D" unique_id=439295226]
 script = ExtResource("1_16012")
@@ -308,9 +317,33 @@ offset_bottom = 149.0
 icon = ExtResource("15_f6itx")
 flat = true
 
+[node name="stinger" type="Area2D" parent="." unique_id=1144540539]
+position = Vector2(0, 760)
+script = ExtResource("22_s8d2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stinger" unique_id=1603478808]
+position = Vector2(3, -2)
+shape = SubResource("RectangleShape2D_f6itx")
+
+[node name="Sprite2D" type="Sprite2D" parent="stinger" unique_id=1909369923]
+texture = ExtResource("4_16012")
+
+[node name="frog" type="Area2D" parent="." unique_id=518793368]
+position = Vector2(300, 760)
+script = ExtResource("23_vnkqh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frog" unique_id=106043912]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_prhth")
+
+[node name="Sprite2D" type="Sprite2D" parent="frog" unique_id=1791668093]
+texture = ExtResource("24_n0k4x")
+
 [connection signal="input_event" from="clock" to="clock" method="_on_input_event"]
 [connection signal="input_event" from="painting" to="painting" method="_on_input_event"]
 [connection signal="input_event" from="furniture" to="furniture" method="_on_input_event"]
 [connection signal="input_event" from="cork_board" to="cork_board" method="_on_input_event"]
 [connection signal="input_event" from="teddy" to="teddy" method="_on_input_event"]
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
+[connection signal="input_event" from="stinger" to="stinger" method="_on_input_event"]
+[connection signal="input_event" from="frog" to="frog" method="_on_input_event"]

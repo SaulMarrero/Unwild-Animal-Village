@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://breekdkxy7w4l" path="res://scripts/platypus_door.gd" id="21_061y5"]
 [ext_resource type="Script" uid="uid://t4b2x3svm2bl" path="res://scripts/frog_door.gd" id="21_r3eyu"]
 [ext_resource type="Script" uid="uid://c5qktl1u6v10u" path="res://scripts/police_door.gd" id="22_061y5"]
+[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="27_scssp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhj6"]
 size = Vector2(60, 60)
@@ -115,7 +116,7 @@ position = Vector2(11538, 392)
 texture = ExtResource("5_5m0si")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1920056436]
-position = Vector2(1150, 760)
+position = Vector2(9200, 760)
 script = ExtResource("7_5m0si")
 
 [node name="collision" type="CollisionShape2D" parent="player" unique_id=856211630]
@@ -393,6 +394,10 @@ shape = SubResource("RectangleShape2D_m3phq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11" unique_id=1633569056]
 position = Vector2(7247.75, 604.5)
 shape = SubResource("RectangleShape2D_mice7")
+
+[node name="policeCall" type="Sprite2D" parent="." unique_id=1516072819]
+position = Vector2(8800, 760)
+texture = ExtResource("27_scssp")
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
 [connection signal="input_event" from="oinkerDoor" to="oinkerDoor" method="_on_input_event"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://be6evwyv5dl6h"]
 
 [ext_resource type="Texture2D" uid="uid://djscdhinnlo7" path="res://sprites/hospital2.png" id="1_behnj"]
+[ext_resource type="Script" uid="uid://crn0g075kxklf" path="res://scripts/hospital_2.gd" id="1_fj5fm"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_7ps4d"]
 [ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_fj5fm"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_4ak7j"]
@@ -15,7 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_o15xq"]
 [ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_gt4rw"]
 [ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="15_x461u"]
+[ext_resource type="Script" uid="uid://brlxgi1t84wdq" path="res://scripts/meowHospital.gd" id="16_d4gm2"]
 [ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="16_fcw71"]
+[ext_resource type="Script" uid="uid://c1255eivoaybn" path="res://scripts/wolfHospital.gd" id="18_luevo"]
+[ext_resource type="Script" uid="uid://dw2ml35w214ro" path="res://scripts/paintingsHospital2.gd" id="20_usgl0"]
+[ext_resource type="Script" uid="uid://dr50a8o7ydhvd" path="res://scripts/booksHospital2.gd" id="21_gjsvt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq0ng"]
 size = Vector2(60, 60)
@@ -47,6 +52,7 @@ size = Vector2(586, 365)
 size = Vector2(415.5, 193.5)
 
 [node name="hospital_2" type="Node2D" unique_id=1755170293]
+script = ExtResource("1_fj5fm")
 
 [node name="background" type="Sprite2D" parent="." unique_id=590911897]
 position = Vector2(960, 540)
@@ -262,6 +268,7 @@ flat = true
 
 [node name="meow" type="Area2D" parent="." unique_id=398862950]
 position = Vector2(350, 760)
+script = ExtResource("16_d4gm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="meow" unique_id=1961228601]
 texture = ExtResource("15_x461u")
@@ -272,6 +279,7 @@ shape = SubResource("RectangleShape2D_f7c38")
 
 [node name="wolf" type="Area2D" parent="." unique_id=386613583]
 position = Vector2(665, 760)
+script = ExtResource("18_luevo")
 
 [node name="Sprite2D" type="Sprite2D" parent="wolf" unique_id=149826098]
 texture = ExtResource("16_fcw71")
@@ -281,15 +289,21 @@ position = Vector2(8.5, -5.5)
 shape = SubResource("RectangleShape2D_gi6xx")
 
 [node name="paintings" type="Area2D" parent="." unique_id=830245432]
+script = ExtResource("20_usgl0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paintings" unique_id=1636758494]
 position = Vector2(490, 196.5)
 shape = SubResource("RectangleShape2D_7xugq")
 
 [node name="books" type="Area2D" parent="." unique_id=4044844]
+script = ExtResource("21_gjsvt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="books" unique_id=892015114]
 position = Vector2(1336.75, 180.75)
 shape = SubResource("RectangleShape2D_fkcb2")
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
+[connection signal="input_event" from="meow" to="meow" method="_on_input_event"]
+[connection signal="input_event" from="wolf" to="wolf" method="_on_input_event"]
+[connection signal="input_event" from="paintings" to="paintings" method="_on_input_event"]
+[connection signal="input_event" from="books" to="books" method="_on_input_event"]
