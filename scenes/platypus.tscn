@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://mciv3r8h28y6"]
 
+[ext_resource type="Script" uid="uid://cdce6y34kgotr" path="res://scripts/platypusHouse.gd" id="1_8i8vq"]
 [ext_resource type="Texture2D" uid="uid://djscdhinnlo7" path="res://sprites/hospital2.png" id="1_j5wpr"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_on2vy"]
 [ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_8i8vq"]
@@ -15,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_nso6p"]
 [ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_21esg"]
 [ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="15_dlan0"]
+[ext_resource type="Script" uid="uid://bxl3igsxmt83w" path="res://scripts/lady_platypus.gd" id="16_jfm0x"]
+[ext_resource type="Script" uid="uid://bkh7ky0yq2p8q" path="res://scripts/paintingsPlatypus.gd" id="18_iefnx"]
+[ext_resource type="Script" uid="uid://b0fvw76b6wfht" path="res://scripts/booksPlatypus.gd" id="19_1hefv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnb3j"]
 size = Vector2(60, 60)
@@ -43,6 +47,7 @@ size = Vector2(434, 256)
 size = Vector2(575, 356)
 
 [node name="platypus" type="Node2D" unique_id=628689518]
+script = ExtResource("1_8i8vq")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1927034342]
 position = Vector2(960, 540)
@@ -258,6 +263,7 @@ flat = true
 
 [node name="platypus" type="Area2D" parent="." unique_id=958926750]
 position = Vector2(400, 760)
+script = ExtResource("16_jfm0x")
 
 [node name="Sprite2D" type="Sprite2D" parent="platypus" unique_id=1427910152]
 texture = ExtResource("15_dlan0")
@@ -267,15 +273,20 @@ position = Vector2(-4, 1.5)
 shape = SubResource("RectangleShape2D_8gana")
 
 [node name="paintings" type="Area2D" parent="." unique_id=1772706596]
+script = ExtResource("18_iefnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paintings" unique_id=421308724]
 position = Vector2(1343, 142)
 shape = SubResource("RectangleShape2D_pn8ww")
 
 [node name="books" type="Area2D" parent="." unique_id=1058323491]
+script = ExtResource("19_1hefv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="books" unique_id=1079912110]
 position = Vector2(482.5, 200)
 shape = SubResource("RectangleShape2D_ldtxg")
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
+[connection signal="input_event" from="platypus" to="platypus" method="_on_input_event"]
+[connection signal="input_event" from="paintings" to="paintings" method="_on_input_event"]
+[connection signal="input_event" from="books" to="books" method="_on_input_event"]

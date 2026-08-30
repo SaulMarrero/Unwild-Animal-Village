@@ -12,21 +12,15 @@ var clues: Array[Dictionary] = [
 	{"name": "Nylon Scrap", "text": "The door wasn't forced open. There was a bit of nylon left under it."},
 	{"name": "Unlocked Door", "text": "The thief got in by entering the password. Only Oinker and Police Chief Teddy knew it."},
 	{"name": "Broken Window", "text": "There were no marks or traces on the window. The gap isn't very big either."},
-	{"name": "Security Guard", "text": "A guard was watching the entrance, but he got poisoned."},
 	{"name": "Witness", "text": "A witness called the police after hearing a loud noise. They showed up really fast."},
 	{"name": "Miss Sheep", "text": "Miss Sheep saw the police arrive a few minutes after the noises."},
 	{"name": "Teddy's briefcase", "text": "Teddy's briefcase contains the passwords that opened Oinker's door."},
 	{"name": "Chief Teddy", "text": "Chief Teddy has heart failure and cannot run."},
 	{"name": "Guard Wolf", "text": "Guard Wolf felt a sharp pain right after closing the door and passed out from it."},
 	{"name": "Pin", "text": "A pin was found stuck in Guard Wolf's hand. No one knows why it was there."},
-	{"name": "Muddy Coin", "text": "An old coin dropped near the back door."},
-	{"name": "Scratched Desk", "text": "Claw-like marks scratched into the wood."},
-	{"name": "Faded Photo", "text": "Shows the mayor with an unknown figure."},
-	{"name": "Loose Thread", "text": "Matches the fabric of a guard's uniform."},
-	{"name": "Burnt Match", "text": "Found near the study's open window."},
-	{"name": "Missing Page", "text": "A page torn out of the mayor's ledger."},
-	{"name": "Strange Odor", "text": "A chemical smell lingers in the hallway."},
-	{"name": "Cracked Glass", "text": "A shattered picture frame on the floor."}
+	{"name": "Hospital Book", "text": "It has a lot of interesting info about the village's animals."},
+	{"name": "Stinger", "text": "Stinger's venom has to be delivered through a direct attack. Croak has an alibi."},
+	{"name": "Lady Platypus", "text": "She suspects someone tried to break into her house."}
 ]
 
 var page := 0

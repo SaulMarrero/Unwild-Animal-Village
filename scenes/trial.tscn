@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://42o18pb333oq"]
+
+[ext_resource type="Script" uid="uid://cfie6ssj31nfu" path="res://scripts/trial.gd" id="1_o7j56"]
+[ext_resource type="Texture2D" uid="uid://hns7vnf5c1bk" path="res://sprites/trial.png" id="1_pew2h"]
+[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="2_3dhd6"]
+[ext_resource type="Texture2D" uid="uid://bk5ckwrh0l3xk" path="res://sprites/button.png" id="2_r0yyb"]
+[ext_resource type="Texture2D" uid="uid://dkfnv8jgtnpky" path="res://sprites/buttonHover.png" id="3_c5r58"]
+[ext_resource type="Texture2D" uid="uid://bdg104svcf05f" path="res://sprites/buttonHover2.png" id="4_o7j56"]
+[ext_resource type="Texture2D" uid="uid://iw5s6tner5hp" path="res://sprites/black.png" id="6_ybws8"]
+[ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="8_vf0si"]
+[ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="9_w7mso"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ybws8"]
+load_path = "res://.godot/imported/button2.png-f00bfa97fc12d9aaf31fc6edeaccccf7.ctex"
+
+[node name="trial" type="Node2D" unique_id=113472970]
+script = ExtResource("1_o7j56")
+
+[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=1736141936]
+position = Vector2(968, 449)
+scale = Vector2(2, 2)
+texture = ExtResource("2_3dhd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=477839930]
+position = Vector2(960, 540)
+texture = ExtResource("1_pew2h")
+
+[node name="TextLabel" type="Label" parent="." unique_id=389836283]
+offset_left = 167.0
+offset_top = 799.0
+offset_right = 1751.0
+offset_bottom = 956.0
+theme_override_font_sizes/font_size = 50
+text = "Hola soy un texto promedio
+Hola soy un texto 2"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="NameLabel" type="Label" parent="." unique_id=1816997854]
+offset_left = 800.0
+offset_top = 717.0
+offset_right = 970.0
+offset_bottom = 800.0
+theme_override_font_sizes/font_size = 60
+text = "ABEJA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintButton" type="TextureButton" parent="." unique_id=1829991609]
+offset_left = 2.0
+offset_top = 952.0
+offset_right = 302.0
+offset_bottom = 1072.0
+texture_normal = ExtResource("2_r0yyb")
+texture_hover = ExtResource("3_c5r58")
+
+[node name="AnswerButton" type="TextureButton" parent="." unique_id=435258669]
+offset_left = 1610.0
+offset_top = 953.0
+offset_right = 1910.0
+offset_bottom = 1073.0
+texture_normal = ExtResource("2_r0yyb")
+texture_hover = ExtResource("3_c5r58")
+
+[node name="BlackOverlay" type="Sprite2D" parent="." unique_id=391400881]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("6_ybws8")
+
+[node name="DisagreeButton" type="TextureButton" parent="." unique_id=372510684]
+offset_left = 832.0
+offset_top = 934.0
+offset_right = 1132.0
+offset_bottom = 1054.0
+texture_normal = SubResource("CompressedTexture2D_ybws8")
+texture_hover = ExtResource("4_o7j56")
+
+[node name="ClueLabel" type="Label" parent="." unique_id=151173855]
+offset_left = 160.0
+offset_top = 709.0
+offset_right = 1744.0
+offset_bottom = 866.0
+theme_override_font_sizes/font_size = 50
+text = "Hola soy un texto promedio
+Hola soy un texto 2"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="clue1" type="TextureButton" parent="." unique_id=1770947629]
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 300.0
+offset_bottom = 400.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue2" type="TextureButton" parent="." unique_id=1340268544]
+offset_left = 100.0
+offset_top = 450.0
+offset_right = 300.0
+offset_bottom = 650.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue3" type="TextureButton" parent="." unique_id=584078331]
+offset_left = 400.0
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 400.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue4" type="TextureButton" parent="." unique_id=958709570]
+offset_left = 400.0
+offset_top = 450.0
+offset_right = 600.0
+offset_bottom = 650.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue5" type="TextureButton" parent="." unique_id=2072385260]
+offset_left = 700.0
+offset_top = 200.0
+offset_right = 900.0
+offset_bottom = 400.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue6" type="TextureButton" parent="." unique_id=151358669]
+offset_left = 700.0
+offset_top = 450.0
+offset_right = 900.0
+offset_bottom = 650.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue7" type="TextureButton" parent="." unique_id=1130371636]
+offset_left = 1000.0
+offset_top = 200.0
+offset_right = 1200.0
+offset_bottom = 400.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue8" type="TextureButton" parent="." unique_id=444048625]
+offset_left = 1000.0
+offset_top = 450.0
+offset_right = 1200.0
+offset_bottom = 650.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue9" type="TextureButton" parent="." unique_id=1587688021]
+offset_left = 1300.0
+offset_top = 200.0
+offset_right = 1500.0
+offset_bottom = 400.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue10" type="TextureButton" parent="." unique_id=901146853]
+offset_left = 1300.0
+offset_top = 450.0
+offset_right = 1500.0
+offset_bottom = 650.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue11" type="TextureButton" parent="." unique_id=2124449382]
+offset_left = 1600.0
+offset_top = 200.0
+offset_right = 1800.0
+offset_bottom = 400.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")
+
+[node name="clue12" type="TextureButton" parent="." unique_id=1567820760]
+offset_left = 1600.0
+offset_top = 450.0
+offset_right = 1800.0
+offset_bottom = 650.0
+texture_normal = ExtResource("8_vf0si")
+texture_hover = ExtResource("9_w7mso")

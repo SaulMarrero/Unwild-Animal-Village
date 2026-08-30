@@ -34,17 +34,11 @@ func isUnlocked(number: int) -> bool:
 		10: return clue10
 		11: return clue11
 		12: return clue12
-		13: return clue13
-		14: return clue14
-		15: return clue15
-		16: return clue16
-		17: return clue17
-		18: return clue18
 	return false
 
 func unlockedCount() -> int:
 	var count := 0
-	for i in range(1, 19):
+	for i in range(1, 13):
 		if isUnlocked(i):
 			count += 1
 	return count

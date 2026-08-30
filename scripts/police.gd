@@ -121,5 +121,5 @@ func _fadeToTrial() -> void:
 	tween.tween_property(rect, "modulate:a", 1.0, fade_time)
 	await tween.finished
 
-	get_tree().change_scene_to_file("res://scenes/trial.tscn")
+	get_tree().change_scene_to_file("res://scenes/platypus.tscn")
 	layer.queue_free()

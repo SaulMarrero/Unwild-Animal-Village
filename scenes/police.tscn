@@ -21,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="13_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="14_n0k4x"]
 [ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="15_f6itx"]
-[ext_resource type="Script" uid="uid://dlxyimdgr0jdv" path="res://scenes/stingerPolice.gd" id="22_s8d2h"]
-[ext_resource type="Script" uid="uid://jhx72di30okn" path="res://scenes/frogPolice.gd" id="23_vnkqh"]
+[ext_resource type="Script" uid="uid://dlxyimdgr0jdv" path="res://scripts/stingerPolice.gd" id="22_s8d2h"]
+[ext_resource type="Script" uid="uid://jhx72di30okn" path="res://scripts/frogPolice.gd" id="23_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="24_n0k4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71yvf"]
