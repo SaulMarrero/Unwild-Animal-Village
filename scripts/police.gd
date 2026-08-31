@@ -1,7 +1,11 @@
 extends Node2D
 
 @onready var canvaslayer = $player/canvaslayer
-@onready var baseAreas: Array[Node] = [$teddy, $clock, $painting, $furniture, $cork_board]
+@onready var teddy = $teddy
+@onready var clock = $clock
+@onready var painting = $painting
+@onready var furniture = $furniture
+@onready var cork_board = $cork_board
 @onready var stinger = $stinger
 @onready var frog = $frog
 
@@ -21,10 +25,8 @@ var finalConversationEarly: Array[Dictionary] = [
 ]
 
 var finalConversationLate: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(It's 6 pm… time for the trial.)"},
-	{"name": "Detective Fox", "text": "(This is moving way too fast, we haven't even had time to go over the clues yet.)"},
-	{"name": "Detective Fox", "text": "(But Oinker's way too desperate to get those documents back.)"},
-	{"name": "Detective Fox", "text": "(Damn impatient old man…)"}
+	{"name": "Detective Fox", "text": "(Neither of them seems to be the one behind this.)"},
+	{"name": "Detective Fox", "text": "(We should go pay Lady Platypus a visit, see what she has to say.)"}
 ]
 
 func _ready() -> void:
@@ -44,12 +46,10 @@ func _ready() -> void:
 	tween.tween_callback(layer.queue_free)
 
 	if Clues.unlockedCount() >= 9:
-		areas = baseAreas.duplicate()
-		areas.append(stinger)
-		areas.append(frog)
+		areas = [teddy, stinger, frog]
 		await _playIntro()
 	else:
-		areas = baseAreas
+		areas = [teddy, clock, painting, furniture, cork_board]
 
 	for area in areas:
 		area.investigated.connect(_onAreaVisited)
@@ -84,7 +84,7 @@ func _onAreaVisited() -> void:
 			area.caseClosed = true
 
 		if Clues.unlockedCount() >= 9:
-			await _fadeToTrial()
+			await _fadeToPlatypus()
 		else:
 			await _fadeOut()
 
@@ -106,7 +106,7 @@ func _fadeOut() -> void:
 	get_tree().change_scene_to_file("res://scenes/street.tscn")
 	layer.queue_free()
 
-func _fadeToTrial() -> void:
+func _fadeToPlatypus() -> void:
 	var layer := CanvasLayer.new()
 	layer.layer = 10
 	add_child(layer)

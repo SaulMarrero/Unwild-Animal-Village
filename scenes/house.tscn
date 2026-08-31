@@ -4,27 +4,26 @@
 [ext_resource type="Texture2D" uid="uid://bckkrwwinuboa" path="res://sprites/house1.png" id="1_d7po0"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_3bgk5"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="3_f74lx"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="4_ptc3g"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_wcu0q"]
-[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="5_wcu0q"]
 [ext_resource type="Script" uid="uid://cydr7ul1nic8h" path="res://scripts/paintings.gd" id="6_f74lx"]
 [ext_resource type="Script" uid="uid://dbg287nh4b4jd" path="res://scripts/fireplace.gd" id="8_qcuhb"]
 [ext_resource type="Script" uid="uid://d3336h8f2feno" path="res://scripts/woof.gd" id="9_82h1m"]
 [ext_resource type="Script" uid="uid://b4qpfho68iwd4" path="res://scripts/door_1.gd" id="9_qcuhb"]
 [ext_resource type="Script" uid="uid://cgo6rdg4nm6f5" path="res://scripts/window.gd" id="10_7685u"]
+[ext_resource type="Texture2D" uid="uid://barclk2binoeh" path="res://sprites/character/woof.png" id="10_qrght"]
 [ext_resource type="Script" uid="uid://80stg2j32yij" path="res://scripts/books.gd" id="11_3853c"]
 [ext_resource type="Script" uid="uid://b5jpk60cbigpb" path="res://scripts/oinker.gd" id="11_e5ov4"]
 [ext_resource type="Script" uid="uid://c62qb3mxp5jhg" path="res://scripts/door_2.gd" id="12_bhgw4"]
-[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="13_3853c"]
-[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="14_bhgw4"]
+[ext_resource type="Texture2D" uid="uid://bk0ffglnf325x" path="res://sprites/character/oinker.png" id="12_r8noe"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="14_qrght"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="16_3ewhn"]
-[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="19_3kuml"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="19_e5ov4"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="20_57tf3"]
 [ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="20_lamap"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="20_qrght"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="21_3kuml"]
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="21_de74l"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="25_r8noe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgk5"]
 size = Vector2(417, 429)
@@ -48,7 +47,7 @@ size = Vector2(179, 829)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_3853c")
+"texture": ExtResource("10_qrght")
 }],
 "loop": true,
 "name": &"default",
@@ -62,7 +61,7 @@ size = Vector2(267, 428)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_bhgw4")
+"texture": ExtResource("12_r8noe")
 }],
 "loop": true,
 "name": &"default",
@@ -79,7 +78,7 @@ size = Vector2(60, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_wcu0q")
+"texture": ExtResource("14_qrght")
 }],
 "loop": false,
 "name": &"default",
@@ -183,8 +182,8 @@ position = Vector2(960, 540)
 texture = ExtResource("3_f74lx")
 
 [node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=688595958]
-position = Vector2(1418, 494)
-texture = ExtResource("4_ptc3g")
+position = Vector2(1420, 432)
+scale = Vector2(2, 2)
 
 [node name="labelName" type="Label" parent="player/canvaslayer" unique_id=429469235]
 anchors_preset = -1
@@ -199,8 +198,6 @@ offset_bottom = 874.0
 rotation = -0.05235988
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Miss
-Sheep"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -214,7 +211,6 @@ offset_top = 860.0
 offset_right = 1188.0
 offset_bottom = 929.0
 theme_override_font_sizes/font_size = 42
-text = "\"My briefcase! My beloved work briefcase... That's where I keep documents about construction projects, events, and lots of other things!\""
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
@@ -371,7 +367,8 @@ offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
-icon = ExtResource("19_3kuml")
+icon = ExtResource("25_r8noe")
+flat = true
 
 [connection signal="input_event" from="paintings" to="paintings" method="_on_input_event"]
 [connection signal="input_event" from="fireplace" to="fireplace" method="_on_input_event"]

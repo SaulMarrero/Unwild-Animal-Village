@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://cdce6y34kgotr" path="res://scripts/platypusHouse.gd" id="1_8i8vq"]
 [ext_resource type="Texture2D" uid="uid://djscdhinnlo7" path="res://sprites/hospital2.png" id="1_j5wpr"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_on2vy"]
-[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_8i8vq"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="4_jfm0x"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_kmqxk"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_p6ff8"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_jfm0x"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="6_jfm0x"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_iefnx"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_1hefv"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_d8mtd"]
@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="11_3mjmg"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="12_aer53"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_nso6p"]
-[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_21esg"]
-[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="15_dlan0"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="15_jfm0x"]
 [ext_resource type="Script" uid="uid://bxl3igsxmt83w" path="res://scripts/lady_platypus.gd" id="16_jfm0x"]
+[ext_resource type="Texture2D" uid="uid://dsoelwby731vr" path="res://sprites/character/platypus.png" id="17_jfm0x"]
 [ext_resource type="Script" uid="uid://bkh7ky0yq2p8q" path="res://scripts/paintingsPlatypus.gd" id="18_iefnx"]
 [ext_resource type="Script" uid="uid://b0fvw76b6wfht" path="res://scripts/booksPlatypus.gd" id="19_1hefv"]
 
@@ -27,7 +27,7 @@ size = Vector2(60, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8i8vq")
+"texture": ExtResource("4_jfm0x")
 }],
 "loop": false,
 "name": &"default",
@@ -258,7 +258,7 @@ offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
-icon = ExtResource("14_21esg")
+icon = ExtResource("15_jfm0x")
 flat = true
 
 [node name="platypus" type="Area2D" parent="." unique_id=958926750]
@@ -266,7 +266,8 @@ position = Vector2(400, 760)
 script = ExtResource("16_jfm0x")
 
 [node name="Sprite2D" type="Sprite2D" parent="platypus" unique_id=1427910152]
-texture = ExtResource("15_dlan0")
+scale = Vector2(-1, 1)
+texture = ExtResource("17_jfm0x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="platypus" unique_id=1076492443]
 position = Vector2(-4, 1.5)

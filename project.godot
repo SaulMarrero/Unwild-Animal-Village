@@ -14,9 +14,14 @@ config/name="Unwild Animal Village"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c1e05j42yl58k"
+
 [autoload]
 
 Clues="*uid://dg05lwxqkc1l1"
+music="*uid://ct7f6omtmpb3l"
 
 [display]
 

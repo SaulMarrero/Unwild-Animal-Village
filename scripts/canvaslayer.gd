@@ -30,6 +30,23 @@ var clues_open := false
 var clues_tween: Tween
 var clues_fade_time := 0.3
 
+var currentSpeaker := ""
+var sprite_tween: Tween
+var sprite_fade_time := 0.15
+
+var speakerSprites: Dictionary = {
+	"Detective Fox": preload("res://sprites/dialogue/fox.png"),
+	"Partner Woof": preload("res://sprites/dialogue/woof.png"),
+	"Mayor Oinker": preload("res://sprites/dialogue/oinker.png"),
+	"Chief Teddy": preload("res://sprites/dialogue/teddy.png"),
+	"Lady Stinger": preload("res://sprites/dialogue/stinger.png"),
+	"Mister Croak": preload("res://sprites/dialogue/croak.png"),
+	"Miss Sheep": preload("res://sprites/dialogue/sheep.png"),
+	"Doctor Meow": preload("res://sprites/dialogue/meow.png"),
+	"Guard Wolf": preload("res://sprites/dialogue/wolf.png"),
+	"Lady Platypus": preload("res://sprites/dialogue/platypus.png")
+}
+
 func _ready() -> void:
 	follow_viewport_enabled = false
 	for node in [marco, characterSprite, labelText, labelName]:
@@ -110,18 +127,36 @@ func _slide(offset: Vector2, duration: float, ease_type: int, on_done: Callable)
 func _open_dialog(id: int) -> void:
 	state = State.OPENING
 	labelText.text = ""
-	labelName.text = lines[index].get("name", "")
+	var speaker: String = lines[index].get("name", "")
+	labelName.text = speaker
+	currentSpeaker = ""
+	_updateCharacterSprite(speaker)
 	_fade_buttons(0.0)
 	_slide(Vector2.ZERO, slide_time, Tween.EASE_OUT, func():
 		if id == dialog_id:
 			_type_line(id)
 	)
 
+func _updateCharacterSprite(speaker: String) -> void:
+	var normalizedSpeaker := speaker.replace("\n", " ")
+
+	if normalizedSpeaker == currentSpeaker:
+		return
+	currentSpeaker = normalizedSpeaker
+
+	var texture: Texture2D = speakerSprites.get(normalizedSpeaker)
+	if texture == null:
+		return
+
+	characterSprite.texture = texture
+
 func _type_line(id: int) -> void:
 	state = State.TYPING
 	skip_typing = false
 	var line: Dictionary = lines[index]
-	labelName.text = line.get("name", "")
+	var speaker: String = line.get("name", "")
+	labelName.text = speaker
+	_updateCharacterSprite(speaker)
 	var text: String = line.get("text", "")
 	labelText.text = ""
 	for c in text:

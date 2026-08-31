@@ -29,11 +29,11 @@ func _ready() -> void:
 
 func _updatePlayerPosition() -> void:
 	var count := Clues.unlockedCount()
-	if count <= 5:
+	if count <= 4:
 		player.position.x = 1150.0
-	elif count <= 7:
+	elif count == 5:
 		player.position.x = 3100.0
-	elif count <= 9:
+	elif count <= 7:
 		player.position.x = 11000.0
 	else:
 		player.position.x = 9200

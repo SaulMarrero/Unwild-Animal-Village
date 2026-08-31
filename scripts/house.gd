@@ -46,6 +46,8 @@ var finalConversation: Array[Dictionary] = [
 
 func _ready() -> void:
 	
+	music.play_music(preload("res://music/theme.mp3"))
+	
 	var layer := CanvasLayer.new()
 	layer.layer = 10
 	add_child(layer)

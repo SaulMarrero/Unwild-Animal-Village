@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var canvaslayer = $player/canvaslayer
+@onready var nextText = $player/canvaslayer/next/Label
 
 func _ready() -> void:
 	var layer := CanvasLayer.new()
@@ -17,3 +18,6 @@ func _ready() -> void:
 	tween.tween_callback(layer.queue_free)
 
 	canvaslayer.show_next()
+
+	if Clues.unlockedCount() >= 12:
+		nextText.text = "Look behind the sign"

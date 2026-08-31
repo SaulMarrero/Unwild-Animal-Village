@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://djscdhinnlo7" path="res://sprites/hospital2.png" id="1_behnj"]
 [ext_resource type="Script" uid="uid://crn0g075kxklf" path="res://scripts/hospital_2.gd" id="1_fj5fm"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_7ps4d"]
-[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_fj5fm"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_4ak7j"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="4_d4gm2"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_4cxir"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_vdadm"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="6_vdadm"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_d4gm2"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_luevo"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_usgl0"]
@@ -14,11 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="11_i5umx"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="12_vobt7"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_o15xq"]
-[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_gt4rw"]
-[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="15_x461u"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="15_d4gm2"]
 [ext_resource type="Script" uid="uid://brlxgi1t84wdq" path="res://scripts/meowHospital.gd" id="16_d4gm2"]
-[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="16_fcw71"]
+[ext_resource type="Texture2D" uid="uid://u7170skvy2ox" path="res://sprites/character/meow.png" id="17_d4gm2"]
 [ext_resource type="Script" uid="uid://c1255eivoaybn" path="res://scripts/wolfHospital.gd" id="18_luevo"]
+[ext_resource type="Texture2D" uid="uid://ck402yi54e2iq" path="res://sprites/character/auuu.png" id="19_luevo"]
 [ext_resource type="Script" uid="uid://dw2ml35w214ro" path="res://scripts/paintingsHospital2.gd" id="20_usgl0"]
 [ext_resource type="Script" uid="uid://dr50a8o7ydhvd" path="res://scripts/booksHospital2.gd" id="21_gjsvt"]
 
@@ -29,7 +29,7 @@ size = Vector2(60, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_fj5fm")
+"texture": ExtResource("4_d4gm2")
 }],
 "loop": false,
 "name": &"default",
@@ -263,7 +263,7 @@ offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
-icon = ExtResource("14_gt4rw")
+icon = ExtResource("15_d4gm2")
 flat = true
 
 [node name="meow" type="Area2D" parent="." unique_id=398862950]
@@ -271,7 +271,8 @@ position = Vector2(350, 760)
 script = ExtResource("16_d4gm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="meow" unique_id=1961228601]
-texture = ExtResource("15_x461u")
+scale = Vector2(-1, 1)
+texture = ExtResource("17_d4gm2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="meow" unique_id=2124537322]
 position = Vector2(-4, -6)
@@ -282,7 +283,8 @@ position = Vector2(665, 760)
 script = ExtResource("18_luevo")
 
 [node name="Sprite2D" type="Sprite2D" parent="wolf" unique_id=149826098]
-texture = ExtResource("16_fcw71")
+scale = Vector2(-1, 1)
+texture = ExtResource("19_luevo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wolf" unique_id=1453836536]
 position = Vector2(8.5, -5.5)

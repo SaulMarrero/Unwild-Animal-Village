@@ -432,10 +432,30 @@ func _ready() -> void:
 	_setPickerVisible(false)
 	_updateCompletion()
 
+	await _fadeIn()
+
 	_playInsert(introConversation, func():
 		trialStarted = true
 		_startWave(0)
 	)
+	
+	music.play_music(preload("res://music/trial.mp3"))
+
+func _fadeIn() -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 10
+	add_child(layer)
+
+	var rect := ColorRect.new()
+	rect.color = Color.BLACK
+	rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	layer.add_child(rect)
+
+	var tween := create_tween()
+	tween.tween_property(rect, "modulate:a", 0.0, 3.0)
+	await tween.finished
+
+	layer.queue_free()
 
 func _startWave(index: int) -> void:
 	currentWave = index
@@ -562,6 +582,7 @@ func _advanceWave() -> void:
 	if currentWave + 1 >= waves.size():
 		currentWave = waves.size()
 		_updateCompletion()
+		music.play_music(preload("res://music/trial2.mp3"))
 		_playInsert(finalConversation, func(): _onTrialComplete())
 	else:
 		_startWave(currentWave + 1)

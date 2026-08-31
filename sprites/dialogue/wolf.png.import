@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3taaqc6wkxh0"
-path="res://.godot/imported/oveja.png-ad6f30e22b445e338d70ffd17ca26b9d.ctex"
+uid="uid://bk4b0346emo63"
+path="res://.godot/imported/wolf.png-797620c5f867b3ba86c2ac278644b109.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/oveja.png"
-dest_files=["res://.godot/imported/oveja.png-ad6f30e22b445e338d70ffd17ca26b9d.ctex"]
+source_file="res://sprites/dialogue/wolf.png"
+dest_files=["res://.godot/imported/wolf.png-797620c5f867b3ba86c2ac278644b109.ctex"]
 
 [params]
 

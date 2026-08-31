@@ -13,4 +13,4 @@ func _physics_process(_delta: float) -> void:
 	velocity.x = direction * current_speed
 	move_and_slide()
 	if direction != 0:
-		player.get_node("animation").flip_h = direction < 0
+		player.get_node("animation").flip_h = direction > 0

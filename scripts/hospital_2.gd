@@ -23,6 +23,7 @@ var finalConversation: Array[Dictionary] = [
 ]
 
 func _ready() -> void:
+	music.play_music(preload("res://music/investigation.mp3"))
 	canvaslayer.external_lock = true
 
 	var layer := CanvasLayer.new()

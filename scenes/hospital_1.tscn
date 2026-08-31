@@ -5,21 +5,21 @@
 [ext_resource type="Script" uid="uid://bvdjhovgm7aro" path="res://scripts/door_1Hospital.gd" id="2_6236t"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_o2mps"]
 [ext_resource type="Script" uid="uid://dtgamj5gqdjo4" path="res://scripts/guard_doorHospital.gd" id="3_b46sq"]
-[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_eyxo2"]
 [ext_resource type="Script" uid="uid://cursdgweqn5dm" path="res://scripts/signHospital.gd" id="4_d125t"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_rgmy0"]
 [ext_resource type="Script" uid="uid://burqe0bqcd6mb" path="res://scripts/door_2Hospital.gd" id="5_qjoq3"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_yo7eh"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_hayx8"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="6_hayx8"]
 [ext_resource type="Script" uid="uid://cyd8a1rax56vl" path="res://scripts/sign_2Hospital.gd" id="6_hqgev"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_6236t"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_b46sq"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="9_b46sq"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_d125t"]
 [ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="10_qjoq3"]
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="11_hqgev"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="12_g30q8"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_kima7"]
-[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_eopvm"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="20_b46sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dt2uu"]
 size = Vector2(160.5, 795)
@@ -43,7 +43,7 @@ size = Vector2(60, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_eyxo2")
+"texture": ExtResource("9_b46sq")
 }],
 "loop": false,
 "name": &"default",
@@ -92,7 +92,7 @@ shape = SubResource("RectangleShape2D_r1t44")
 script = ExtResource("6_hqgev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sign2" unique_id=1312299063]
-position = Vector2(1418.75, 280.75)
+position = Vector2(1079, 282)
 shape = SubResource("RectangleShape2D_87ikj")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=2079113212]
@@ -300,7 +300,7 @@ offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
-icon = ExtResource("14_eopvm")
+icon = ExtResource("20_b46sq")
 flat = true
 
 [connection signal="input_event" from="door1" to="door1" method="_on_input_event"]

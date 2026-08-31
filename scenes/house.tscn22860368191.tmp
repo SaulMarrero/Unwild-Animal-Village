@@ -1,0 +1,385 @@
+[gd_scene format=3 uid="uid://b3lxo6bfgjps8"]
+
+[ext_resource type="Script" uid="uid://xw0a5vuyh3k7" path="res://scripts/house.gd" id="1_bhgw4"]
+[ext_resource type="Texture2D" uid="uid://bckkrwwinuboa" path="res://sprites/house1.png" id="1_d7po0"]
+[ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_3bgk5"]
+[ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="3_f74lx"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="4_ptc3g"]
+[ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_wcu0q"]
+[ext_resource type="Script" uid="uid://cydr7ul1nic8h" path="res://scripts/paintings.gd" id="6_f74lx"]
+[ext_resource type="Script" uid="uid://dbg287nh4b4jd" path="res://scripts/fireplace.gd" id="8_qcuhb"]
+[ext_resource type="Script" uid="uid://d3336h8f2feno" path="res://scripts/woof.gd" id="9_82h1m"]
+[ext_resource type="Script" uid="uid://b4qpfho68iwd4" path="res://scripts/door_1.gd" id="9_qcuhb"]
+[ext_resource type="Script" uid="uid://cgo6rdg4nm6f5" path="res://scripts/window.gd" id="10_7685u"]
+[ext_resource type="Script" uid="uid://80stg2j32yij" path="res://scripts/books.gd" id="11_3853c"]
+[ext_resource type="Script" uid="uid://b5jpk60cbigpb" path="res://scripts/oinker.gd" id="11_e5ov4"]
+[ext_resource type="Script" uid="uid://c62qb3mxp5jhg" path="res://scripts/door_2.gd" id="12_bhgw4"]
+[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="13_3853c"]
+[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="14_bhgw4"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="14_qrght"]
+[ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="16_3ewhn"]
+[ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="19_e5ov4"]
+[ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="20_57tf3"]
+[ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="20_lamap"]
+[ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="20_qrght"]
+[ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="21_3kuml"]
+[ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="21_de74l"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="25_r8noe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bgk5"]
+size = Vector2(417, 429)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptc3g"]
+size = Vector2(632, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f74lx"]
+size = Vector2(192, 795)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcu0q"]
+size = Vector2(474, 518)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhx8p"]
+size = Vector2(448, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65la3"]
+size = Vector2(179, 829)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fn05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_3853c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ewhn"]
+size = Vector2(267, 428)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82h1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_bhgw4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5ov4"]
+size = Vector2(275.5, 428)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwc8c"]
+size = Vector2(60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mhx8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_qrght")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcuhb"]
+size = Vector2(27.5, 410)
+
+[node name="house" type="Node2D" unique_id=66368149]
+script = ExtResource("1_bhgw4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557737285]
+position = Vector2(1300, 540)
+texture = ExtResource("1_d7po0")
+
+[node name="paintings" type="Area2D" parent="." unique_id=1370277022]
+script = ExtResource("6_f74lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paintings" unique_id=1816949630]
+position = Vector2(537.5, 294.5)
+shape = SubResource("RectangleShape2D_3bgk5")
+
+[node name="fireplace" type="Area2D" parent="." unique_id=660461058]
+script = ExtResource("8_qcuhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fireplace" unique_id=1054400643]
+position = Vector2(1135, 345.5)
+shape = SubResource("RectangleShape2D_ptc3g")
+
+[node name="door1" type="Area2D" parent="." unique_id=1690468373]
+script = ExtResource("9_qcuhb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door1" unique_id=1803017950]
+position = Vector2(76, 546.5)
+shape = SubResource("RectangleShape2D_f74lx")
+
+[node name="window" type="Area2D" parent="." unique_id=792878866]
+script = ExtResource("10_7685u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="window" unique_id=1394199619]
+position = Vector2(1712, 282)
+shape = SubResource("RectangleShape2D_wcu0q")
+
+[node name="books" type="Area2D" parent="." unique_id=1368330092]
+script = ExtResource("11_3853c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="books" unique_id=1371862302]
+position = Vector2(2207, 234)
+shape = SubResource("RectangleShape2D_mhx8p")
+
+[node name="door2" type="Area2D" parent="." unique_id=40510011]
+script = ExtResource("12_bhgw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door2" unique_id=1024667291]
+position = Vector2(2527.5, 551.5)
+shape = SubResource("RectangleShape2D_65la3")
+
+[node name="woof" type="Area2D" parent="." unique_id=1915590775]
+position = Vector2(1937, 760)
+script = ExtResource("9_82h1m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="woof" unique_id=888559248]
+sprite_frames = SubResource("SpriteFrames_0fn05")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="woof" unique_id=1250178259]
+position = Vector2(2.5, 2)
+shape = SubResource("RectangleShape2D_3ewhn")
+
+[node name="oinker" type="Area2D" parent="." unique_id=1822523285]
+position = Vector2(1646, 760)
+script = ExtResource("11_e5ov4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="oinker" unique_id=1928931728]
+sprite_frames = SubResource("SpriteFrames_82h1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oinker" unique_id=974111577]
+position = Vector2(-4.25, 1)
+shape = SubResource("RectangleShape2D_e5ov4")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=429524840]
+position = Vector2(2221, 760)
+script = ExtResource("2_3bgk5")
+
+[node name="collision" type="CollisionShape2D" parent="player" unique_id=748499157]
+shape = SubResource("RectangleShape2D_bwc8c")
+
+[node name="animation" type="AnimatedSprite2D" parent="player" unique_id=1031602730]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_mhx8p")
+
+[node name="camera" type="Camera2D" parent="player" unique_id=1322674370]
+position = Vector2(-581, -220)
+limit_left = 0
+limit_right = 2600
+
+[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=1122483178]
+script = ExtResource("4_wcu0q")
+
+[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1258848422]
+position = Vector2(960, 540)
+texture = ExtResource("3_f74lx")
+
+[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=688595958]
+position = Vector2(1418, 494)
+texture = ExtResource("4_ptc3g")
+
+[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=429469235]
+anchors_preset = -1
+anchor_left = -0.03270269
+anchor_top = 0.0030468977
+anchor_right = 0.04683447
+anchor_bottom = 0.0030468977
+offset_left = 313.0
+offset_top = 672.0
+offset_right = 590.0
+offset_bottom = 874.0
+rotation = -0.05235988
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Miss
+Sheep"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=284221255]
+anchors_preset = -1
+anchor_right = 0.23177083
+anchor_bottom = 0.1421875
+offset_left = 312.0
+offset_top = 860.0
+offset_right = 1188.0
+offset_bottom = 929.0
+theme_override_font_sizes/font_size = 42
+text = "\"My briefcase! My beloved work briefcase... That's where I keep documents about construction projects, events, and lots of other things!\""
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=977711011]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=167386294]
+position = Vector2(2330, 867)
+shape = SubResource("RectangleShape2D_qcuhb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1018969476]
+position = Vector2(266, 861)
+shape = SubResource("RectangleShape2D_qcuhb")
+
+[node name="skip" type="Button" parent="player/canvaslayer" unique_id=1025167361]
+offset_left = 1550.0
+offset_top = 20.0
+offset_right = 1891.0
+offset_bottom = 135.0
+
+[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=957530535]
+position = Vector2(950, 92)
+texture = ExtResource("16_3ewhn")
+
+[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=1190677472]
+offset_left = -630.28546
+offset_top = -32.414455
+offset_right = 637.5429
+offset_bottom = 50.585545
+rotation = -0.017453292
+theme_override_font_sizes/font_size = 60
+text = "Explore the house for clues"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=754375157]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=594905605]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("19_e5ov4")
+script = ExtResource("20_qrght")
+
+[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1754049854]
+offset_left = -186.0
+offset_top = -413.0
+offset_right = 177.0
+offset_bottom = -248.0
+theme_override_font_sizes/font_size = 120
+text = "CLUES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1617370523]
+offset_left = 597.0
+offset_top = -140.0
+offset_right = 745.0
+offset_bottom = 68.0
+texture_normal = ExtResource("20_lamap")
+texture_hover = ExtResource("21_de74l")
+
+[node name="next" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=736514254]
+offset_left = 735.0
+offset_top = 283.0
+offset_right = 883.0
+offset_bottom = 491.0
+rotation = 3.1415927
+texture_normal = ExtResource("20_lamap")
+texture_hover = ExtResource("21_de74l")
+
+[node name="ClueName" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=571355234]
+offset_left = 68.0
+offset_top = -180.0
+offset_right = 552.0
+offset_bottom = -117.0
+theme_override_font_sizes/font_size = 32
+text = "No clues selected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClueText" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1276108279]
+offset_left = 76.0
+offset_top = -104.0
+offset_right = 538.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="tb1" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1844352722]
+offset_left = -700.0
+offset_top = -140.0
+offset_right = -520.0
+offset_bottom = 40.0
+texture_normal = ExtResource("20_57tf3")
+texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="tb2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1379861995]
+offset_left = -468.0
+offset_top = -140.0
+offset_right = -288.0
+offset_bottom = 40.0
+texture_normal = ExtResource("20_57tf3")
+texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="tb3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=417964111]
+offset_left = -236.0
+offset_top = -140.0
+offset_right = -56.0
+offset_bottom = 40.0
+texture_normal = ExtResource("20_57tf3")
+texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="tb4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=604784046]
+offset_left = -700.0
+offset_top = 100.0
+offset_right = -520.0
+offset_bottom = 280.0
+texture_normal = ExtResource("20_57tf3")
+texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="tb5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1145949057]
+offset_left = -468.0
+offset_top = 100.0
+offset_right = -288.0
+offset_bottom = 280.0
+texture_normal = ExtResource("20_57tf3")
+texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="tb6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=896646100]
+offset_left = -236.0
+offset_top = 100.0
+offset_right = -56.0
+offset_bottom = 280.0
+texture_normal = ExtResource("20_57tf3")
+texture_hover = ExtResource("21_3kuml")
+stretch_mode = 3
+
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=671901837]
+offset_left = 1772.0
+offset_top = 13.0
+offset_right = 1908.0
+offset_bottom = 149.0
+icon = ExtResource("25_r8noe")
+
+[connection signal="input_event" from="paintings" to="paintings" method="_on_input_event"]
+[connection signal="input_event" from="fireplace" to="fireplace" method="_on_input_event"]
+[connection signal="input_event" from="door1" to="door1" method="_on_input_event"]
+[connection signal="input_event" from="window" to="window" method="_on_input_event"]
+[connection signal="input_event" from="books" to="books" method="_on_input_event"]
+[connection signal="input_event" from="door2" to="door2" method="_on_input_event"]
+[connection signal="input_event" from="woof" to="woof" method="_on_input_event"]
+[connection signal="input_event" from="oinker" to="oinker" method="_on_input_event"]
+[connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]

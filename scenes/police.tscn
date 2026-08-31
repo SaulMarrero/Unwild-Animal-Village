@@ -2,28 +2,29 @@
 
 [ext_resource type="Script" uid="uid://dcp4rrar5a4sm" path="res://scripts/police.gd" id="1_16012"]
 [ext_resource type="Texture2D" uid="uid://wgov2dked8ys" path="res://sprites/policeRoom.png" id="1_iyusq"]
-[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="2_0bal8"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="3_5uwbv"]
 [ext_resource type="Script" uid="uid://c1x4xwkaxcdn7" path="res://scripts/clockPolice.gd" id="3_ifpbh"]
-[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="4_16012"]
 [ext_resource type="Script" uid="uid://bgy8l34hsox7r" path="res://scripts/paintingPolice.gd" id="4_hqbaw"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="5_2gat8"]
 [ext_resource type="Script" uid="uid://dkebnpl8ho0d0" path="res://scripts/furniturePolice.gd" id="5_6wgn5"]
 [ext_resource type="Script" uid="uid://bbso3wwfwqs1w" path="res://scripts/cork_boardPolice.gd" id="6_s8d2h"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="6_ywr4r"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="7_3x6p7"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="7_3x6p7"]
 [ext_resource type="Script" uid="uid://crfhkcqsgrpha" path="res://scripts/teddyPolice.gd" id="7_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="8_g878j"]
+[ext_resource type="Texture2D" uid="uid://cukfi7htbse5" path="res://sprites/character/teddy.png" id="8_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="9_ifpbh"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="10_hqbaw"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="10_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://bdnyr4wnj1ndt" path="res://sprites/next-back.png" id="11_6wgn5"]
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="12_s8d2h"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="13_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="14_n0k4x"]
-[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="15_f6itx"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="21_s8d2h"]
 [ext_resource type="Script" uid="uid://dlxyimdgr0jdv" path="res://scripts/stingerPolice.gd" id="22_s8d2h"]
+[ext_resource type="Texture2D" uid="uid://be7fltclod70d" path="res://sprites/character/stinger.png" id="23_n0k4x"]
 [ext_resource type="Script" uid="uid://jhx72di30okn" path="res://scripts/frogPolice.gd" id="23_vnkqh"]
-[ext_resource type="Texture2D" uid="uid://dc1sdk4oj5ym1" path="res://sprites/woof.png" id="24_n0k4x"]
+[ext_resource type="Texture2D" uid="uid://dkaj63ni3ioqt" path="res://sprites/character/croak.png" id="25_f6itx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_71yvf"]
 radius = 127.57743
@@ -47,7 +48,7 @@ size = Vector2(60, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_16012")
+"texture": ExtResource("10_vnkqh")
 }],
 "loop": false,
 "name": &"default",
@@ -103,7 +104,8 @@ position = Vector2(-300, 760)
 script = ExtResource("7_vnkqh")
 
 [node name="Sprite2D" type="Sprite2D" parent="teddy" unique_id=315384442]
-texture = ExtResource("2_0bal8")
+scale = Vector2(-1, 1)
+texture = ExtResource("8_vnkqh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="teddy" unique_id=1648682809]
 position = Vector2(-3.5, -3.5)
@@ -314,7 +316,7 @@ offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
-icon = ExtResource("15_f6itx")
+icon = ExtResource("21_s8d2h")
 flat = true
 
 [node name="stinger" type="Area2D" parent="." unique_id=1144540539]
@@ -326,7 +328,8 @@ position = Vector2(3, -2)
 shape = SubResource("RectangleShape2D_f6itx")
 
 [node name="Sprite2D" type="Sprite2D" parent="stinger" unique_id=1909369923]
-texture = ExtResource("4_16012")
+scale = Vector2(-1, 1)
+texture = ExtResource("23_n0k4x")
 
 [node name="frog" type="Area2D" parent="." unique_id=518793368]
 position = Vector2(300, 760)
@@ -337,7 +340,8 @@ position = Vector2(-1, 3)
 shape = SubResource("RectangleShape2D_prhth")
 
 [node name="Sprite2D" type="Sprite2D" parent="frog" unique_id=1791668093]
-texture = ExtResource("24_n0k4x")
+scale = Vector2(-1, 1)
+texture = ExtResource("25_f6itx")
 
 [connection signal="input_event" from="clock" to="clock" method="_on_input_event"]
 [connection signal="input_event" from="painting" to="painting" method="_on_input_event"]

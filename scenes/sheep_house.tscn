@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://xr24ti50a04r" path="res://scripts/sheep_house.gd" id="1_rmsad"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="2_rmsad"]
 [ext_resource type="Script" uid="uid://bvbrttq88i15f" path="res://scripts/miss_sheepSheep.gd" id="3_6dfug"]
-[ext_resource type="Texture2D" uid="uid://deuhji0sifbct" path="res://sprites/player.png" id="3_6ffdd"]
+[ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="4_6dfug"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="4_tbnm4"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="5_tlxup"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/oveja.png" id="6_6dfug"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="6_6dfug"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="7_pdrpi"]
 [ext_resource type="Texture2D" uid="uid://cmpmn1esj04eg" path="res://sprites/clues.png" id="8_gy7y1"]
 [ext_resource type="Script" uid="uid://4ithpfh4g4m1" path="res://scripts/clues_sprite.gd" id="9_5ch6r"]
@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://b1gh7nyxv62cg" path="res://sprites/next-back2.png" id="11_er6i3"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="12_x6bow"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="13_u76wh"]
-[ext_resource type="Texture2D" uid="uid://cjm2bchmg3qao" path="res://icon.svg" id="14_jinbj"]
-[ext_resource type="Texture2D" uid="uid://dnhtko33w72gg" path="res://sprites/oinker.png" id="16_6ffdd"]
+[ext_resource type="Texture2D" uid="uid://cci0g6n7l0pdo" path="res://sprites/cluesIcon.png" id="15_6dfug"]
+[ext_resource type="Texture2D" uid="uid://bkepdafx21cqq" path="res://sprites/character/sheep.png" id="17_6dfug"]
 [ext_resource type="Script" uid="uid://i6wkppj1ype6" path="res://scripts/clockSheep.gd" id="18_pdrpi"]
 [ext_resource type="Script" uid="uid://bg3mjxlvdqjch" path="res://scripts/windowSheep.gd" id="19_gy7y1"]
 
@@ -27,7 +27,7 @@ size = Vector2(60, 60)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_6ffdd")
+"texture": ExtResource("4_6dfug")
 }],
 "loop": false,
 "name": &"default",
@@ -258,7 +258,7 @@ offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
 offset_bottom = 149.0
-icon = ExtResource("14_jinbj")
+icon = ExtResource("15_6dfug")
 flat = true
 
 [node name="missSheep" type="Area2D" parent="." unique_id=1260924742]
@@ -266,7 +266,8 @@ position = Vector2(350, 760)
 script = ExtResource("3_6dfug")
 
 [node name="AnimatedSprite2D" type="Sprite2D" parent="missSheep" unique_id=473141074]
-texture = ExtResource("16_6ffdd")
+scale = Vector2(-1, 1)
+texture = ExtResource("17_6dfug")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="missSheep" unique_id=1387379038]
 shape = SubResource("RectangleShape2D_tlxup")
