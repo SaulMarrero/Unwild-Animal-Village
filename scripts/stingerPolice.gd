@@ -17,7 +17,7 @@ func _ready() -> void:
 	_updateVisibility()
 
 func _updateVisibility() -> void:
-	var unlocked := Clues.unlockedCount() >= 10
+	var unlocked := Clues.unlockedCount() >= 9
 	visible = unlocked
 	set_deferred("monitoring", unlocked)
 	set_deferred("monitorable", unlocked)
@@ -34,3 +34,9 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		dialog.start_dialog(conversation)
 		visited = true
 		investigated.emit()
+		_unlockClue()
+
+func _unlockClue() -> void:
+	while dialog.state != dialog.State.CLOSED:
+		await get_tree().process_frame
+	Clues.clue11 = true

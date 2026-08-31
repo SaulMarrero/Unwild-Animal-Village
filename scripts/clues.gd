@@ -1,23 +1,18 @@
 extends Node
 
-var clue1 := true
-var clue2 := true
-var clue3 := true
-var clue4 := true
-var clue5 := true
-var clue6 := true
-var clue7 := true
-var clue8 := true
-var clue9 := true
-var clue10 := true
+var clue1 := false
+var clue2 := false
+var clue3 := false
+var clue4 := false
+var clue5 := false
+var clue6 := false
+var clue7 := false
+var clue8 := false
+var clue9 := false
+var clue10 := false
 var clue11 := false
 var clue12 := false
-var clue13 := false
-var clue14 := false
-var clue15 := false
-var clue16 := false
-var clue17 := false
-var clue18 := false
+
 var policeCallShown := false
 
 func isUnlocked(number: int) -> bool:
@@ -45,11 +40,11 @@ func unlockedCount() -> int:
 
 func currentDoor() -> String:
 	var count := unlockedCount()
-	if count <= 5:
+	if count <= 4:
 		return "missSheepDoor"
-	elif count == 6:
+	elif count <= 6:
 		return "policeDoor"
-	elif count == 8:
+	elif count <= 8:
 		return "hospitalDoor"
 	else:
 		return "policeDoor"
@@ -64,7 +59,7 @@ func currentDoorMessage() -> Array[Dictionary]:
 				{"name": "Detective Fox", "text": "(I should go visit the witness, Miss Sheep.)"}
 			]
 		"policeDoor":
-			if count >= 10:
+			if count >= 9:
 				return [
 					{"name": "Detective Fox", "text": "(I need to go to the police station to question the suspects.)"}
 				]

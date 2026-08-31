@@ -24,7 +24,7 @@ func _ready() -> void:
 	await tween.finished
 	layer.queue_free()
 
-	if Clues.unlockedCount() >= 10 and not Clues.policeCallShown:
+	if Clues.unlockedCount() >= 9 and not Clues.policeCallShown:
 		await _playPoliceCall()
 
 func _updatePlayerPosition() -> void:
@@ -40,12 +40,12 @@ func _updatePlayerPosition() -> void:
 
 func _updateNextText() -> void:
 	var count := Clues.unlockedCount()
-	if count >= 10:
+	if count >= 9:
 		nextText.text = "Go to the police station"
-	elif count >= 8:
+	elif count >= 7:
 		nextText.text = "Go to the hospital"
-	elif Clues.clue6:
-		nextText.text = "Go to the police station"
+	elif Clues.clue6 or count >= 5:
+		nextText.text = "Go to Chief Teddy's office"
 
 func _playPoliceCall() -> void:
 	Clues.policeCallShown = true

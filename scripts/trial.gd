@@ -49,16 +49,45 @@ var introConversation: Array[Dictionary] = [
 ]
 
 var finalConversation: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": ""},
-	{"name": "Detective Fox", "text": ""},
-	{"name": "Chief Teddy", "text": ""},
-	{"name": "Detective Fox", "text": ""},
-	{"name": "Partner Woof", "text": ""}
+	{"name": "Detective Fox", "text": "Doctor Meow, were you the one behind this crime?"},
+	{"name": "Chief Teddy", "text": "What?!"},
+	{"name": "Doctor Meow", "text": "Excuse me?"},
+	{"name": "Detective Fox", "text": "The question is clear, Doctor. Answer it, did you steal Mayor Oinker's documents?"},
+	{"name": "Doctor Meow", "text": "No! I flat-out deny it! How could I possibly be the thief?"},
+	{"name": "Detective Fox", "text": "It wouldn't be that strange. Your profile fits this case better than anyone's. Take this, for example."},
+	{"name": "Detective Fox", "text": "A doctor like you would know exactly how much poison to use, how long it'd take to kick in, and what dose to apply."},
+	{"name": "Doctor Meow", "text": "You're accusing me without any proof, detective. How would I have found out the password to Mayor Oinker's inner door?"},
+	{"name": "Detective Fox", "text": "Chief Teddy's been your patient for months now, hasn't he?"},
+	{"name": "Detective Fox", "text": "Taking advantage of any moment he wasn't looking to read his papers wouldn't have been hard, you must've had plenty of chances."},
+	{"name": "Chief Teddy", "text": "How could Doctor Meow have found out about Lady Platypus being trans?"},
+	{"name": "Partner Woof", "text": "If you think about it, it's not that strange, right? Meow must have medical records for all his patients."},
+	{"name": "Partner Woof", "text": "All it takes is Lady Platypus going to the hospital at least once for Meow to have found out."},
+	{"name": "Doctor Meow", "text": "That's all just guesswork! There's no proof backing any of it!"},
+	{"name": "Detective Fox", "text": "And still, you're the profile that fits best, Doctor."},
+	{"name": "Detective Fox", "text": "Tell me, if we search Animal Village from top to bottom, will we end up finding the stolen documents?"},
+	{"name": "Detective Fox", "text": "If we do, it's better for you to confess now before your sentence gets worse."},
+	{"name": "Doctor Meow", "text": "..."},
+	{"name": "Detective Fox", "text": "You read Chief Teddy's papers while he was your patient!"},
+	{"name": "Doctor Meow", "text": "..."},
+	{"name": "Detective Fox", "text": "You snuck into Lady Platypus's house to get her venom and use it against Guard Wolf!"},
+	{"name": "Doctor Meow", "text": "..."},
+	{"name": "Detective Fox", "text": "You poisoned Guard Wolf by tying a venom-coated needle to the door handle while he was in the bathroom!"},
+	{"name": "Doctor Meow", "text": "..."},
+	{"name": "Detective Fox", "text": "You snuck in through the chimney and broke the window to throw off our investigation!"},
+	{"name": "Doctor Meow", "text": "ENOUGH!"},
+	{"name": "Detective Fox", "text": "..."},
+	{"name": "Partner Woof", "text": "It's over, Doctor."},
+	{"name": "Chief Teddy", "text": "Oinker's documents were kept in a safe."},
+	{"name": "Chief Teddy", "text": "He probably hasn't been able to get into it yet, so he must have just hidden the safe somewhere."},
+	{"name": "Doctor Meow", "text": "Fine. I admit it."},
+	{"name": "Doctor Meow", "text": "It was me. I committed the robbery. I poisoned Guard Wolf. I broke into Lady Platypus's house."},
+	{"name": "Doctor Meow", "text": "But I already figured this might happen. I haven't lost yet, Teddy."},
+	{"name": "Detective Fox", "text": "Teddy?"},
+	{"name": "Chief Teddy", "text": "That's enough. Take him to the cells!"},
+	{"name": "Detective Fox", "text": "(I watched in silence as Doctor Meow was dragged off to the cells by the guards.)"},
+	{"name": "Detective Fox", "text": "(This trial was finally over…)"}
 ]
 
-# targetLine = índice (0-based) de la línea que contiene la contradicción.
-# El jugador SOLO acierta el "momento" si pulsa Disagree estando en esa línea exacta.
-# clue = número de pista (1-12) que contradice esa línea concretamente.
 var waves: Array[Dictionary] = [
 	{
 		"lines": [
@@ -543,4 +572,22 @@ func _updateCompletion() -> void:
 	completionLabel.text = str(percent) + "% of trial completed"
 
 func _onTrialComplete() -> void:
-	pass # TODO: aquí va lo que pase tras el diálogo de conclusión
+	await _fadeToPrison()
+
+func _fadeToPrison() -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 10
+	add_child(layer)
+
+	var rect := ColorRect.new()
+	rect.color = Color.BLACK
+	rect.modulate.a = 0.0
+	rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	layer.add_child(rect)
+
+	var tween := create_tween()
+	tween.tween_property(rect, "modulate:a", 1.0, 1.0)
+	await tween.finished
+
+	get_tree().change_scene_to_file("res://scenes/prison.tscn")
+	layer.queue_free()

@@ -44,4 +44,4 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 func _unlockClue() -> void:
 	while dialog.state != dialog.State.CLOSED:
 		await get_tree().process_frame
-	Clues.clue10 = true
+	Clues.clue9 = true

@@ -93,6 +93,16 @@ offset_bottom = 400.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
 
+[node name="Label" type="Label" parent="clue1" unique_id=1995661118]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 31.0
+offset_right = 128.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "1"
+
 [node name="clue2" type="TextureButton" parent="." unique_id=1340268544]
 offset_left = 100.0
 offset_top = 450.0
@@ -100,6 +110,16 @@ offset_right = 300.0
 offset_bottom = 650.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
+
+[node name="Label" type="Label" parent="clue2" unique_id=1392675351]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 33.0
+offset_right = 126.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "2"
 
 [node name="clue3" type="TextureButton" parent="." unique_id=584078331]
 offset_left = 400.0
@@ -109,6 +129,16 @@ offset_bottom = 400.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
 
+[node name="Label" type="Label" parent="clue3" unique_id=1813212719]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 30.0
+offset_right = 127.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "3"
+
 [node name="clue4" type="TextureButton" parent="." unique_id=958709570]
 offset_left = 400.0
 offset_top = 450.0
@@ -116,6 +146,16 @@ offset_right = 600.0
 offset_bottom = 650.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
+
+[node name="Label2" type="Label" parent="clue4" unique_id=40127511]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 28.0
+offset_right = 126.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "4"
 
 [node name="clue5" type="TextureButton" parent="." unique_id=2072385260]
 offset_left = 700.0
@@ -125,6 +165,16 @@ offset_bottom = 400.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
 
+[node name="Label2" type="Label" parent="clue5" unique_id=332273172]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 28.0
+offset_right = 126.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "5"
+
 [node name="clue6" type="TextureButton" parent="." unique_id=151358669]
 offset_left = 700.0
 offset_top = 450.0
@@ -132,6 +182,16 @@ offset_right = 900.0
 offset_bottom = 650.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
+
+[node name="Label2" type="Label" parent="clue6" unique_id=621426801]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 28.0
+offset_right = 126.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "6"
 
 [node name="clue7" type="TextureButton" parent="." unique_id=1130371636]
 offset_left = 1000.0
@@ -141,6 +201,16 @@ offset_bottom = 400.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
 
+[node name="Label2" type="Label" parent="clue7" unique_id=1800311439]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 28.0
+offset_right = 126.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "7"
+
 [node name="clue8" type="TextureButton" parent="." unique_id=444048625]
 offset_left = 1000.0
 offset_top = 450.0
@@ -148,6 +218,16 @@ offset_right = 1200.0
 offset_bottom = 650.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
+
+[node name="Label2" type="Label" parent="clue8" unique_id=1919909344]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 28.0
+offset_right = 126.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "8"
 
 [node name="clue9" type="TextureButton" parent="." unique_id=1587688021]
 offset_left = 1300.0
@@ -157,6 +237,16 @@ offset_bottom = 400.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
 
+[node name="Label2" type="Label" parent="clue9" unique_id=386299958]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 28.0
+offset_right = 126.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "9"
+
 [node name="clue10" type="TextureButton" parent="." unique_id=901146853]
 offset_left = 1300.0
 offset_top = 450.0
@@ -164,6 +254,16 @@ offset_right = 1500.0
 offset_bottom = 650.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
+
+[node name="Label2" type="Label" parent="clue10" unique_id=1360100246]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 30.0
+offset_right = 155.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "10"
 
 [node name="clue11" type="TextureButton" parent="." unique_id=2124449382]
 offset_left = 1600.0
@@ -173,6 +273,16 @@ offset_bottom = 400.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
 
+[node name="Label2" type="Label" parent="clue11" unique_id=18929169]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 28.0
+offset_right = 160.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "11"
+
 [node name="clue12" type="TextureButton" parent="." unique_id=1567820760]
 offset_left = 1600.0
 offset_top = 450.0
@@ -180,6 +290,16 @@ offset_right = 1800.0
 offset_bottom = 650.0
 texture_normal = ExtResource("8_vf0si")
 texture_hover = ExtResource("9_w7mso")
+
+[node name="Label2" type="Label" parent="clue12" unique_id=328015813]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 28.0
+offset_right = 156.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "12"
 
 [node name="completion" type="Label" parent="." unique_id=1102622851]
 offset_left = 21.0

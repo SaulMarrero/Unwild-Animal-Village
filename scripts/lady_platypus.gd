@@ -28,3 +28,9 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		dialog.start_dialog(conversation)
 		visited = true
 		investigated.emit()
+		_unlockClue()
+
+func _unlockClue() -> void:
+	while dialog.state != dialog.State.CLOSED:
+		await get_tree().process_frame
+	Clues.clue12 = true

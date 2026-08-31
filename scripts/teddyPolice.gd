@@ -46,7 +46,7 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 				dialog.start_dialog(shortLine)
 			return
 
-		if Clues.unlockedCount() >= 10:
+		if Clues.unlockedCount() >= 9:
 			dialog.start_dialog(conversationSecondVisit)
 		else:
 			dialog.start_dialog(conversationFirstVisit)
@@ -58,5 +58,5 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 func _unlockClues() -> void:
 	while dialog.state != dialog.State.CLOSED:
 		await get_tree().process_frame
+	Clues.clue6 = true
 	Clues.clue7 = true
-	Clues.clue8 = true

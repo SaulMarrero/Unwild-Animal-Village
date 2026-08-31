@@ -43,7 +43,7 @@ func _ready() -> void:
 	tween.tween_property(rect, "modulate:a", 0.0, 1.0)
 	tween.tween_callback(layer.queue_free)
 
-	if Clues.unlockedCount() >= 10:
+	if Clues.unlockedCount() >= 9:
 		areas = baseAreas.duplicate()
 		areas.append(stinger)
 		areas.append(frog)
@@ -70,7 +70,7 @@ func _onAreaVisited() -> void:
 		while canvaslayer.state != canvaslayer.State.CLOSED:
 			await get_tree().process_frame
 
-		if Clues.unlockedCount() >= 10:
+		if Clues.unlockedCount() >= 9:
 			canvaslayer.start_dialog(finalConversationLate)
 		else:
 			canvaslayer.start_dialog(finalConversationEarly)
@@ -83,7 +83,7 @@ func _onAreaVisited() -> void:
 		for area in areas:
 			area.caseClosed = true
 
-		if Clues.unlockedCount() >= 10:
+		if Clues.unlockedCount() >= 9:
 			await _fadeToTrial()
 		else:
 			await _fadeOut()
