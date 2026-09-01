@@ -32,7 +32,9 @@ var conversationFirstVisit: Array[Dictionary] = [
 ]
 
 var conversationSecondVisit: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(Placeholder text for Teddy's second conversation.)"}
+	{"name": "Chief Teddy", "text": "These two are the only poisonous animals in all of Animal Village."},
+	{"name": "Chief Teddy", "text": "I mean, the ones nearby, at least."},
+	{"name": "Detective Fox", "text": "Yeah, I get it. That's enough, Chief. Thanks for the help."}
 ]
 
 var shortLine: Array[Dictionary] = []

@@ -39,15 +39,32 @@ var endingLines: Array[String] = [
 ]
 
 var leakLines: Array[String] = [
-	"Boceto: primera línea del final leak.",
-	"Boceto: segunda línea del final leak.",
-	"Boceto: tercera línea del final leak."
+	"Detective Fox burned the documents.",
+	"He was interrogated by Chief Teddy the following day.",
+	"The conclusion was clear. Detective Fox had destroyed official documents on his own.",
+	"He was arrested the next day.",
+	"The State Surveillance Bill was approved two weeks later, after the documents were reprinted.",
+	"The press was bought off. The people didn't rise up against it.",
+	"Detective Fox and Doctor Meow were sentenced to life in prison.",
+	"The whereabouts of detective hopeful Woof remain unknown.",
+	"Did you think justice really existed?",
+	"One person alone can't change anything.",
+	"Better luck next time.",
+	"Glory to Animal Village."
 ]
 
 var returnLines: Array[String] = [
-	"Boceto: primera línea del final return.",
-	"Boceto: segunda línea del final return.",
-	"Boceto: tercera línea del final return."
+	"Detective Fox returned the documents to Mayor Oinker.",
+	"The State Surveillance Bill was approved the very next day.",
+	"The press was bought off. The people didn't rise up against it.",
+	"Doctor Meow was sentenced to life in prison.",
+	"Detective Fox was arrested the next day for knowing too much.",
+	"He was sentenced to life in prison for crimes he didn't commit.",
+	"Detective hopeful Woof took his place.",
+	"Did you think cooperating with corruption would work out for you?",
+	"Karma always catches up.",
+	"Better luck next time.",
+	"Glory to Animal Village."
 ]
 
 var currentLines: Array[String] = []

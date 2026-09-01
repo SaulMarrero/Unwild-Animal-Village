@@ -229,6 +229,8 @@ offset_left = 1550.0
 offset_top = 20.0
 offset_right = 1891.0
 offset_bottom = 135.0
+theme_override_font_sizes/font_size = 50
+text = "SKIP"
 
 [node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=957530535]
 position = Vector2(950, 92)

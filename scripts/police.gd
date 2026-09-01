@@ -25,8 +25,10 @@ var finalConversationEarly: Array[Dictionary] = [
 ]
 
 var finalConversationLate: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(Neither of them seems to be the one behind this.)"},
-	{"name": "Detective Fox", "text": "(We should go pay Lady Platypus a visit, see what she has to say.)"}
+	{"name": "Partner Woof", "text": "Detective! It's urgent!"},
+	{"name": "Partner Woof", "text": "Lady Platypus is calling us. She says her house has been robbed!"},
+	{"name": "Detective Fox", "text": "(Robbed, right now? How convenient.)"},
+	{"name": "Detective Fox", "text": "(Either way, we should go take a look, just in case it's relevant to the case.)"}
 ]
 
 func _ready() -> void:

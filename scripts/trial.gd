@@ -21,6 +21,8 @@ extends Node2D
 @export var stingerTexture: Texture2D
 @export var platypusTexture: Texture2D
 @export var sheepTexture: Texture2D
+@export var meowTexture: Texture2D
+@export var wolfTexture: Texture2D
 
 var speakerTextures: Dictionary = {}
 
@@ -419,7 +421,9 @@ func _ready() -> void:
 		"Mister Croak": croakTexture,
 		"Lady Stinger": stingerTexture,
 		"Lady Platypus": platypusTexture,
-		"Miss Sheep": sheepTexture
+		"Miss Sheep": sheepTexture,
+		"Doctor Meow": meowTexture,
+		"Guard Wolf": wolfTexture
 	}
 
 	hintButton.pressed.connect(_onHintButtonPressed)
@@ -475,10 +479,10 @@ func _showLine() -> void:
 	_typeText(line.get("text", ""))
 
 func _changeSprite(speaker: String) -> void:
-	var tween := create_tween()
-	tween.tween_property(characterSprite, "modulate:a", 0.0, 0.15)
-	tween.tween_callback(func(): characterSprite.texture = speakerTextures.get(speaker))
-	tween.tween_property(characterSprite, "modulate:a", 1.0, 0.15)
+	var texture: Texture2D = speakerTextures.get(speaker)
+	if texture == null:
+		return
+	characterSprite.texture = texture
 
 func _typeText(text: String) -> void:
 	typing = true

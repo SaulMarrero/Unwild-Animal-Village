@@ -10,7 +10,12 @@ var finalConversation: Array[Dictionary] = [
 	{"name": "Detective Fox", "text": "(It's 6 pm… time for the trial.)"},
 	{"name": "Detective Fox", "text": "(This is moving way too fast, we haven't even had time to go over the clues yet.)"},
 	{"name": "Detective Fox", "text": "(But Oinker's way too desperate to get those documents back.)"},
-	{"name": "Detective Fox", "text": "(Damn impatient old man…)"}
+	{"name": "Detective Fox", "text": "(Damn impatient old man…)"},
+	{"name": "Detective Fox", "text": "Lady Platypus, would you mind if we keep investigating after the trial?"},
+	{"name": "Detective Fox", "text": "You know how Mayor Oinker gets about these things..."},
+	{"name": "Lady Platypus", "text": "...."},
+	{"name": "Lady Platypus", "text": "Yeah, that's fair. It's fine..."},
+	{"name": "Detective Fox", "text": "(Seems like bringing up Oinker scared her even more than her supposed robbery.)"}
 ]
 
 func _ready() -> void:

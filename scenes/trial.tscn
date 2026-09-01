@@ -2,18 +2,41 @@
 
 [ext_resource type="Script" uid="uid://cfie6ssj31nfu" path="res://scripts/trial.gd" id="1_o7j56"]
 [ext_resource type="Texture2D" uid="uid://hns7vnf5c1bk" path="res://sprites/trial.png" id="1_pew2h"]
+[ext_resource type="Texture2D" uid="uid://bpwupynmdad0e" path="res://sprites/dialogue/fox.png" id="2_2qoyw"]
 [ext_resource type="Texture2D" uid="uid://bk5ckwrh0l3xk" path="res://sprites/button.png" id="2_r0yyb"]
 [ext_resource type="Texture2D" uid="uid://dkfnv8jgtnpky" path="res://sprites/buttonHover.png" id="3_c5r58"]
+[ext_resource type="Texture2D" uid="uid://barclk2binoeh" path="res://sprites/character/woof.png" id="3_giweo"]
 [ext_resource type="Texture2D" uid="uid://bdg104svcf05f" path="res://sprites/buttonHover2.png" id="4_o7j56"]
+[ext_resource type="Texture2D" uid="uid://mkcrac40j52k" path="res://sprites/dialogue/teddy.png" id="4_qcnw6"]
+[ext_resource type="Texture2D" uid="uid://dym4e4fyuud3w" path="res://sprites/dialogue/croak.png" id="5_k4yd4"]
+[ext_resource type="Texture2D" uid="uid://dlef7iwqbe5vr" path="res://sprites/dialogue/stinger.png" id="6_sgktp"]
 [ext_resource type="Texture2D" uid="uid://iw5s6tner5hp" path="res://sprites/black.png" id="6_ybws8"]
+[ext_resource type="Texture2D" uid="uid://dyjy1kf0kpjvx" path="res://sprites/dialogue/platypus.png" id="7_f6oa0"]
 [ext_resource type="Texture2D" uid="uid://dcvh1wyyjkmbm" path="res://sprites/clueBox.png" id="8_vf0si"]
+[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="8_ypt0q"]
+[ext_resource type="Texture2D" uid="uid://dmaeo5bxehk04" path="res://sprites/dialogue/meow.png" id="9_fpgrm"]
 [ext_resource type="Texture2D" uid="uid://ch5sy1c40yva5" path="res://sprites/clueBox2.png" id="9_w7mso"]
+[ext_resource type="Texture2D" uid="uid://bk4b0346emo63" path="res://sprites/dialogue/wolf.png" id="10_xedly"]
+[ext_resource type="Texture2D" uid="uid://w31tr2w7l7go" path="res://sprites/TRIALback.png" id="11_giweo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ybws8"]
 load_path = "res://.godot/imported/button2.png-f00bfa97fc12d9aaf31fc6edeaccccf7.ctex"
 
 [node name="trial" type="Node2D" unique_id=113472970]
 script = ExtResource("1_o7j56")
+foxTexture = ExtResource("2_2qoyw")
+woofTexture = ExtResource("3_giweo")
+teddyTexture = ExtResource("4_qcnw6")
+croakTexture = ExtResource("5_k4yd4")
+stingerTexture = ExtResource("6_sgktp")
+platypusTexture = ExtResource("7_f6oa0")
+sheepTexture = ExtResource("8_ypt0q")
+meowTexture = ExtResource("9_fpgrm")
+wolfTexture = ExtResource("10_xedly")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=93543196]
+position = Vector2(960, 540)
+texture = ExtResource("11_giweo")
 
 [node name="CharacterSprite" type="Sprite2D" parent="." unique_id=1736141936]
 position = Vector2(968, 449)
@@ -300,3 +323,30 @@ offset_top = 17.0
 offset_right = 61.0
 offset_bottom = 40.0
 theme_override_font_sizes/font_size = 50
+
+[node name="Label" type="Label" parent="." unique_id=1426717872]
+offset_left = 79.0
+offset_top = 979.0
+offset_right = 223.0
+offset_bottom = 1062.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "HINT"
+
+[node name="Label2" type="Label" parent="." unique_id=685953845]
+offset_left = 1638.0
+offset_top = 972.0
+offset_right = 1886.0
+offset_bottom = 1055.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "ANSWER"
+
+[node name="Label3" type="Label" parent="." unique_id=1129639099]
+offset_left = 858.0
+offset_top = 961.0
+offset_right = 1142.0
+offset_bottom = 1044.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "DISAGREE"

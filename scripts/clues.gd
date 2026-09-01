@@ -1,17 +1,17 @@
 extends Node
 
-var clue1 := false
-var clue2 := false
-var clue3 := false
-var clue4 := false
-var clue5 := false
-var clue6 := false
-var clue7 := false
-var clue8 := false
-var clue9 := false
-var clue10 := false
-var clue11 := false
-var clue12 := false
+var clue1 := true
+var clue2 := true
+var clue3 := true
+var clue4 := true
+var clue5 := true
+var clue6 := true
+var clue7 := true
+var clue8 := true
+var clue9 := true
+var clue10 := true
+var clue11 := true
+var clue12 := true
 
 var policeCallShown := false
 

@@ -8,7 +8,12 @@ var caseClosed := false
 @onready var dialog = $"../player/canvaslayer"
 
 var conversation: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(Placeholder text for Frog's conversation.)"}
+	{"name": "Detective Fox", "text": "We don't have much time, so let's get straight to it."},
+	{"name": "Detective Fox", "text": "Do you have an alibi?"},
+	{"name": "Mister Croak", "text": "I do."},
+	{"name": "Detective Fox", "text": "Huh? You actually have one?"},
+	{"name": "Lady Stinger", "text": "Mister Croak works long hours at the supermarket. Anyone can confirm he was busy yesterday!"},
+	{"name": "Detective Fox", "text": "(Then why the hell did Teddy even bring him here?! Useless idiots...)"}
 ]
 
 var shortLine: Array[Dictionary] = []

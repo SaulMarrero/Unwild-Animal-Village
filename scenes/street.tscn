@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://fkar2w5obfmy" path="res://sprites/police.png" id="5_5m0si"]
 [ext_resource type="Script" uid="uid://bw4woi8wfebk4" path="res://scripts/player.gd" id="7_5m0si"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="7_7vr8w"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="8_dxpu0"]
 [ext_resource type="Script" uid="uid://q056cg8hhcp" path="res://scripts/canvaslayer.gd" id="8_fmkxj"]
 [ext_resource type="Texture2D" uid="uid://bqmt2qrvjviwl" path="res://sprites/character/fox.png" id="8_scssp"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="11_wd6c3"]
@@ -66,23 +65,11 @@ size = Vector2(395.5, 396.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scssp"]
 size = Vector2(236.5, 340.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkqeo"]
-size = Vector2(302.5, 398)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcar7"]
-size = Vector2(317.5, 406)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3phq"]
-size = Vector2(301, 402)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mice7"]
-size = Vector2(302.5, 407)
-
 [node name="street" type="Node2D" unique_id=1603340922]
 script = ExtResource("1_wd6c3")
 
 [node name="floor" type="Sprite2D" parent="." unique_id=848129823]
-position = Vector2(6087.9995, 930)
+position = Vector2(6000, 540)
 scale = Vector2(3.0000005, 1.0000004)
 texture = ExtResource("1_3ffmx")
 
@@ -112,7 +99,8 @@ scale = Vector2(1, 1.0019232)
 texture = ExtResource("4_7vr8w")
 
 [node name="police" type="Sprite2D" parent="." unique_id=1155225032]
-position = Vector2(11538, 392)
+position = Vector2(11493.5, 392)
+scale = Vector2(0.9190909, 1)
 texture = ExtResource("5_5m0si")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1920056436]
@@ -128,7 +116,7 @@ sprite_frames = SubResource("SpriteFrames_6epoj")
 [node name="camera" type="Camera2D" parent="player" unique_id=1760376546]
 position = Vector2(-581, -220)
 limit_left = 87
-limit_right = 12088
+limit_right = 12000
 
 [node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=177048072]
 script = ExtResource("8_fmkxj")
@@ -138,8 +126,8 @@ position = Vector2(960, 540)
 texture = ExtResource("7_7vr8w")
 
 [node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=740678862]
-position = Vector2(1418, 494)
-texture = ExtResource("8_dxpu0")
+position = Vector2(1418, 451)
+scale = Vector2(2, 2)
 
 [node name="labelName" type="Label" parent="player/canvaslayer" unique_id=56527644]
 anchors_preset = -1
@@ -154,8 +142,6 @@ offset_bottom = 874.0
 rotation = -0.05235988
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Miss
-Sheep"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -169,14 +155,13 @@ offset_top = 860.0
 offset_right = 1188.0
 offset_bottom = 929.0
 theme_override_font_sizes/font_size = 42
-text = "\"My briefcase! My beloved work briefcase... That's where I keep documents about construction projects, events, and lots of other things!\""
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1774327008]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1195630468]
-position = Vector2(11800, 867)
+position = Vector2(11704, 862)
 shape = SubResource("RectangleShape2D_582hs")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1824011554]
@@ -372,35 +357,49 @@ script = ExtResource("22_061y5")
 position = Vector2(11313.75, 637.75)
 shape = SubResource("RectangleShape2D_scssp")
 
-[node name="Area2D8" type="Area2D" parent="." unique_id=344717892]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D8" unique_id=1000375990]
-position = Vector2(2232.75, 604)
-shape = SubResource("RectangleShape2D_kkqeo")
-
-[node name="Area2D9" type="Area2D" parent="." unique_id=1499455354]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D9" unique_id=1560342905]
-position = Vector2(3902.25, 608)
-shape = SubResource("RectangleShape2D_xcar7")
-
-[node name="Area2D10" type="Area2D" parent="." unique_id=994769533]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D10" unique_id=789287363]
-position = Vector2(5580.5, 610)
-shape = SubResource("RectangleShape2D_m3phq")
-
 [node name="Area2D11" type="Area2D" parent="." unique_id=1274662671]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D11" unique_id=1633569056]
-position = Vector2(7247.75, 604.5)
-shape = SubResource("RectangleShape2D_mice7")
 
 [node name="policeCall" type="Sprite2D" parent="." unique_id=1516072819]
 visible = false
 position = Vector2(8800, 760)
 scale = Vector2(-1, 1)
 texture = ExtResource("27_scssp")
+
+[node name="Label" type="Label" parent="." unique_id=1951522781]
+offset_left = 2167.0
+offset_top = 470.0
+offset_right = 2305.0
+offset_bottom = 525.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "SHEEP"
+
+[node name="Label2" type="Label" parent="." unique_id=391568813]
+offset_left = 7157.0
+offset_top = 471.0
+offset_right = 7352.0
+offset_bottom = 526.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "PLATYPUS"
+
+[node name="Label3" type="Label" parent="." unique_id=1001871106]
+offset_left = 5499.0
+offset_top = 467.0
+offset_right = 5694.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "STINGER"
+
+[node name="Label4" type="Label" parent="." unique_id=1301102942]
+offset_left = 3840.0
+offset_top = 477.0
+offset_right = 4035.0
+offset_bottom = 532.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "CROAK"
 
 [connection signal="pressed" from="player/canvaslayer/clues" to="player/canvaslayer" method="_on_clues_pressed"]
 [connection signal="input_event" from="oinkerDoor" to="oinkerDoor" method="_on_input_event"]

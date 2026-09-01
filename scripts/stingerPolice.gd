@@ -8,7 +8,12 @@ var caseClosed := false
 @onready var dialog = $"../player/canvaslayer"
 
 var conversation: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(Placeholder text for Stinger's conversation.)"}
+	{"name": "Detective Fox", "text": "We don't have much time, so let's get straight to it."},
+	{"name": "Detective Fox", "text": "Do you have an alibi?"},
+	{"name": "Lady Stinger", "text": "Straight to the point, huh... No, I don't. I was home alone, you know? Never left the house."},
+	{"name": "Lady Stinger", "text": "But it couldn't have been me! My venom has to be injected through my stinger..."},
+	{"name": "Lady Stinger", "text": "A guard would've seen me coming if I'd attacked him, don't you think?"},
+	{"name": "Detective Fox", "text": "(Yeah, I guess she's got a point.)"}
 ]
 
 var shortLine: Array[Dictionary] = []

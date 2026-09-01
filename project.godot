@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Unwild Animal Village"
+run/main_scene="uid://cptkaidda6ijg"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -28,6 +29,7 @@ music="*uid://ct7f6omtmpb3l"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -66,3 +68,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

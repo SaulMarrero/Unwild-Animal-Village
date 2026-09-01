@@ -8,11 +8,12 @@ var caseClosed := false
 @onready var dialog = $"../player/canvaslayer"
 
 var conversation: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(Cosas sobre)"}
+	{"name": "Detective Fox", "text": "(I wonder who's selling all these paintings around town.)"},
+	{"name": "Detective Fox", "text": "(Whoever it is must be loaded.)"}
 ]
 
 var shortLine: Array[Dictionary] = [
-	{"name": "Detective Fox", "text": "(I wonder who's selling all these paintings around town.)"}
+	{"name": "Detective Fox", "text": "(Whoever it is must be loaded.)"}
 ]
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:

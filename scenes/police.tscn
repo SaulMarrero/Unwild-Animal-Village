@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://dkebnpl8ho0d0" path="res://scripts/furniturePolice.gd" id="5_6wgn5"]
 [ext_resource type="Script" uid="uid://bbso3wwfwqs1w" path="res://scripts/cork_boardPolice.gd" id="6_s8d2h"]
 [ext_resource type="Texture2D" uid="uid://l8w8cp1gbg70" path="res://sprites/Dialogos.png" id="6_ywr4r"]
-[ext_resource type="Texture2D" uid="uid://3taaqc6wkxh0" path="res://sprites/dialogue/sheep.png" id="7_3x6p7"]
 [ext_resource type="Script" uid="uid://crfhkcqsgrpha" path="res://scripts/teddyPolice.gd" id="7_vnkqh"]
 [ext_resource type="Texture2D" uid="uid://cei12mx7axtlw" path="res://sprites/mission.png" id="8_g878j"]
 [ext_resource type="Texture2D" uid="uid://cukfi7htbse5" path="res://sprites/character/teddy.png" id="8_vnkqh"]
@@ -55,7 +54,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdvoy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnkqh"]
 size = Vector2(27.5, 410)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6itx"]
@@ -126,18 +125,18 @@ position = Vector2(-500, -220)
 limit_left = -680
 limit_right = 1920
 
-[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=715255071]
+[node name="canvaslayer" type="CanvasLayer" parent="player" unique_id=644742432]
 script = ExtResource("5_2gat8")
 
-[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1549936846]
+[node name="Marco" type="Sprite2D" parent="player/canvaslayer" unique_id=1380394689]
 position = Vector2(960, 540)
 texture = ExtResource("6_ywr4r")
 
-[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=2081676037]
-position = Vector2(1418, 494)
-texture = ExtResource("7_3x6p7")
+[node name="characterSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=2044976230]
+position = Vector2(1418, 451)
+scale = Vector2(2, 2)
 
-[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=823932877]
+[node name="labelName" type="Label" parent="player/canvaslayer" unique_id=1532489288]
 anchors_preset = -1
 anchor_left = -0.03270269
 anchor_top = 0.0030468977
@@ -150,13 +149,11 @@ offset_bottom = 874.0
 rotation = -0.05235988
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Miss
-Sheep"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=692570192]
+[node name="labelText" type="Label" parent="player/canvaslayer" unique_id=679509675]
 anchors_preset = -1
 anchor_right = 0.23177083
 anchor_bottom = 0.1421875
@@ -165,25 +162,24 @@ offset_top = 860.0
 offset_right = 1188.0
 offset_bottom = 929.0
 theme_override_font_sizes/font_size = 42
-text = "\"My briefcase! My beloved work briefcase... That's where I keep documents about construction projects, events, and lots of other things!\""
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1946006993]
+[node name="StaticBody2D" type="StaticBody2D" parent="player/canvaslayer" unique_id=1614375812]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=676440031]
-position = Vector2(1650, 867)
-shape = SubResource("RectangleShape2D_mdvoy")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=725833329]
+position = Vector2(11704, 862)
+shape = SubResource("RectangleShape2D_vnkqh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1939553633]
-position = Vector2(-372, 864)
-shape = SubResource("RectangleShape2D_mdvoy")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="player/canvaslayer/StaticBody2D" unique_id=1918559781]
+position = Vector2(266, 861)
+shape = SubResource("RectangleShape2D_vnkqh")
 
-[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=1763343905]
+[node name="next" type="Sprite2D" parent="player/canvaslayer" unique_id=270855816]
 position = Vector2(950, 92)
 texture = ExtResource("8_g878j")
 
-[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=1406113571]
+[node name="Label" type="Label" parent="player/canvaslayer/next" unique_id=577256755]
 offset_left = -630.28546
 offset_top = -32.414455
 offset_right = 637.5429
@@ -195,7 +191,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=1064023451]
+[node name="cluesBlocker" type="Control" parent="player/canvaslayer" unique_id=783533621]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -204,13 +200,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=2075781402]
+[node name="cluesSprite" type="Sprite2D" parent="player/canvaslayer" unique_id=115644706]
 visible = false
 position = Vector2(960, 540)
 texture = ExtResource("9_ifpbh")
 script = ExtResource("10_hqbaw")
 
-[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=1621599116]
+[node name="Label" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=368743570]
 offset_left = -186.0
 offset_top = -413.0
 offset_right = 177.0
@@ -220,7 +216,7 @@ text = "CLUES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="back" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=202334552]
+[node name="back" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=802177016]
 offset_left = 597.0
 offset_top = -140.0
 offset_right = 745.0
@@ -228,7 +224,7 @@ offset_bottom = 68.0
 texture_normal = ExtResource("11_6wgn5")
 texture_hover = ExtResource("12_s8d2h")
 
-[node name="next" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=9222662]
+[node name="next" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=553176600]
 offset_left = 735.0
 offset_top = 283.0
 offset_right = 883.0
@@ -237,7 +233,7 @@ rotation = 3.1415927
 texture_normal = ExtResource("11_6wgn5")
 texture_hover = ExtResource("12_s8d2h")
 
-[node name="ClueName" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=222482781]
+[node name="ClueName" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=155760424]
 offset_left = 68.0
 offset_top = -180.0
 offset_right = 552.0
@@ -247,7 +243,7 @@ text = "No clues selected"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ClueText" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=336739616]
+[node name="ClueText" type="Label" parent="player/canvaslayer/cluesSprite" unique_id=419133157]
 offset_left = 76.0
 offset_top = -104.0
 offset_right = 538.0
@@ -257,7 +253,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="tb1" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1364536634]
+[node name="tb1" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=21848797]
 offset_left = -700.0
 offset_top = -140.0
 offset_right = -520.0
@@ -266,7 +262,7 @@ texture_normal = ExtResource("13_vnkqh")
 texture_hover = ExtResource("14_n0k4x")
 stretch_mode = 3
 
-[node name="tb2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=849131381]
+[node name="tb2" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1488026688]
 offset_left = -468.0
 offset_top = -140.0
 offset_right = -288.0
@@ -275,7 +271,7 @@ texture_normal = ExtResource("13_vnkqh")
 texture_hover = ExtResource("14_n0k4x")
 stretch_mode = 3
 
-[node name="tb3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=2062016472]
+[node name="tb3" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=487366177]
 offset_left = -236.0
 offset_top = -140.0
 offset_right = -56.0
@@ -284,7 +280,7 @@ texture_normal = ExtResource("13_vnkqh")
 texture_hover = ExtResource("14_n0k4x")
 stretch_mode = 3
 
-[node name="tb4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=469615579]
+[node name="tb4" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1961598364]
 offset_left = -700.0
 offset_top = 100.0
 offset_right = -520.0
@@ -293,7 +289,7 @@ texture_normal = ExtResource("13_vnkqh")
 texture_hover = ExtResource("14_n0k4x")
 stretch_mode = 3
 
-[node name="tb5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=16297119]
+[node name="tb5" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=1660575647]
 offset_left = -468.0
 offset_top = 100.0
 offset_right = -288.0
@@ -302,7 +298,7 @@ texture_normal = ExtResource("13_vnkqh")
 texture_hover = ExtResource("14_n0k4x")
 stretch_mode = 3
 
-[node name="tb6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=535889122]
+[node name="tb6" type="TextureButton" parent="player/canvaslayer/cluesSprite" unique_id=41479596]
 offset_left = -236.0
 offset_top = 100.0
 offset_right = -56.0
@@ -311,7 +307,7 @@ texture_normal = ExtResource("13_vnkqh")
 texture_hover = ExtResource("14_n0k4x")
 stretch_mode = 3
 
-[node name="clues" type="Button" parent="player/canvaslayer" unique_id=468584717]
+[node name="clues" type="Button" parent="player/canvaslayer" unique_id=469057543]
 offset_left = 1772.0
 offset_top = 13.0
 offset_right = 1908.0
